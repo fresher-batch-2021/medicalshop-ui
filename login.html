@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+   
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+        <header id="header">
+
+        </header>
+		<center><h3>Login form</h3></center>
+		<form>
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required > <br/>
+        <label for="password">Password*</label>
+        <input type="password" name="password" id="password" required> <br/>
+        <button>Login</button>
+    </form>
+    <script src="assets/js/jquery.min.js"></script>
+     <script>
+      $("#header").load("header.html")  ;
+      function  register()
+      {
+          event.preventDefault();
+          const email=document.querySelector("#email").value;
+          const password=document.querySelector("#password").value;
+              if (password.length<8)
+              {
+                 alert("Password must be greater than 8 characters");
+              }
+              else
+              {
+                 alert("agreed");
+              }
+
+         
+        //   console.log(userobj);
+          alert("Login Successfull");
+      }
+  </script>
+</body>
+</html>

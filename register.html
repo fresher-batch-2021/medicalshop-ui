@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+        <header id="header">
+
+            </header>
+    <center><h3>Register form</h3></center>
+    <form onsubmit="register()">
+        <label for="name">Name*</label>
+        <input type="text" name="name" id="name" placeholder="Enter the Name" required  autofocus > <br/>
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required > <br/>
+        <label for="mobno">MobileNo*</label>
+        <input type="tel" name="mobno" id="mobno" required > <br/>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob"> <br/>
+        <label for="password">Password*</label>
+        <input type="password" name="password" id="password" required> <br/>
+        <label>Gender</label>
+        <input type="radio" id="Female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <button>Register</button>
+    </form>
+
+    <script src="assets/js/jquery.min.js"></script>
+  <script>
+      $("#header").load("header.html")  ;
+      function  register()
+      {
+          event.preventDefault();
+          const name=document.querySelector("#name").value;
+          const email=document.querySelector("#email").value;
+          const mobno=document.querySelector("#mobno").value;
+          const dob=document.querySelector("#dob").value;
+          const password=document.querySelector("#password").value;
+          
+          let userobj={
+              "name":name,
+              "email":email,
+              "mobno":mobno,
+              "dob":dob,
+              "password":password,
+
+          };
+          console.log(userobj);
+          alert("Registration Successfull");
+          window.location.href="new.html";
+
+
+      }
+
+  </script>
+ 
+</body>
+</html>

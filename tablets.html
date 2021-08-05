@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="Tablets">
+      <div class="column">
+        <img src="images/paracetamal.jpeg" alt="Forest" style="width:60%">
+        <div class="description">
+                <form onsubmit="card()">
+                <label for="productname">ProductName:</label>
+                <input type="text" name="productname" id="productname" value="brilinta"readonly> <br/>
+                <label for="price">Price:</label>
+                <input type="text" name="price" id="price" value="Rs.100"readonly> <br/>
+                <label for="qnt">qnt:</label>
+                <input type="number" name="qnt" id="qnt" min=1 > <br/>
+                <button>BuyNow</button>
+                </form>
+        </div>    
+      </div>
+    <div class="column">
+    <img src="images/adderall.jpg" alt="Forest" style="width:100%">
+        <div class="description">
+                <form onsubmit="card()">
+                <label for="productname">ProductName:</label>
+                <input type="text" name="productname" id="productname" value="Adderall"readonly> <br/>
+                <label for="price">Price:</label>
+                <input type="text" name="price" id="price" value="Rs.10"readonly> <br/>
+                <label for="qnt">qnt:</label>
+                <input type="number" name="qnt" id="qnt" min=1 > <br/>
+                <button>BuyNow</button>  
+                </form>  
+        </div>
+    </div>
+      <div class="column">
+        <img src="images/brilinta.jpeg" alt="Forest" style="width:90%">
+        <div class="description">
+            <form onsubmit="card()">
+            <label for="productname">ProductName:</label>
+            <input type="text" name="productname" id="productname" value="brilinta"readonly> <br/>
+            <label for="price">Price:</label>
+            <input type="text" name="price" id="price" value="Rs.100"readonly> <br/>
+            <label for="qnt">qnt:</label>
+            <input type="number" name="qnt" id="qnt" min=1 > <br/>
+            <button>BuyNow</button>
+            </form>
+        </div>
+        
+       </div>
+      <div class="column">
+        <img src="images/naltivia.jpg" alt="Forest" style="width:100%">
+        <div class="description">
+                <form onsubmit="card()">
+                <label for="productname">ProductName:</label>
+                <input type="text" name="productname" id="productname" value="naltivia"readonly> <br/>
+                <label for="price">Price:</label>
+                <input type="text" name="price" id="price" value="Rs.30"readonly> <br/>
+                <label for="qnt">qnt:</label>
+                <input type="number" name="qnt" id="qnt" min=1 > <br/>
+                <button>BuyNow</button>
+                </form>
+        </div>
+     </div>
+    
+<script>
+     function  card()
+      {
+          event.preventDefault();
+          const productname=document.querySelector("#productname").value;
+          const price=document.querySelector("#price").value;
+          const qnt=document.querySelector("#qnt").value;
+          let userobj={
+              "productname":productname,
+              "price":price,
+              "qnt":qnt,
+         };
+         
+          alert("order Placed");
+          window.location.href="cart.html";
+
+
+      }
+
+</script>
+
+     
+      
+</body>
+</html>
