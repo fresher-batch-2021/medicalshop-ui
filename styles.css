@@ -15,13 +15,6 @@ body
   margin:0px 200px 0px 200px;
   border: 1px solid grey;
   padding: 20px;
-}
-.cat1
-{
-  background-color: cornsilk;
-  margin:0px 100px 0px 100px;
-  border: 1px solid grey;
-  padding: 20px;
   position: relative;
 }
 .cat h2
@@ -73,6 +66,13 @@ body
   align-items: center;
   flex-wrap: wrap;
   margin-top: 20px;
+
+}
+.product-container button{
+ background-color: green;
+ color: white;
+ display: inline-block;
+ position: relative;
 }
 .product-box
 {
@@ -121,7 +121,7 @@ body
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-  margin:100px 500px 50px 200px;
+  margin:0px 50px 50px 0px;
   border: 1px solid grey;
   padding: 20px;
   clear:both;

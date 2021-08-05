@@ -12,7 +12,7 @@
         <header id="header">
 
             </header>
-    <center><h3>Register form</h3></center>
+    <h3>Register form</h3>
     <form onsubmit="register()">
         <label for="name">Name*</label>
         <input type="text" name="name" id="name" placeholder="Enter the Name" required  autofocus > <br/>
@@ -43,20 +43,27 @@
           const mobno=document.querySelector("#mobno").value;
           const dob=document.querySelector("#dob").value;
           const password=document.querySelector("#password").value;
-          
-          let userobj={
+              if (password.length<8)
+              {
+                 alert("Password must be greater than 8 characters");
+              }
+              else
+              {
+                
+                let userobj={
               "name":name,
               "email":email,
               "mobno":mobno,
               "dob":dob,
-              "password":password,
+              "password":password
 
-          };
-          console.log(userobj);
-          alert("Registration Successfull");
-          window.location.href="new.html";
-
-
+                 };
+                 console.log(userobj);
+                 alert("Registration Successfull");
+                 window.location.href="new.html";
+              }
+         
+        
       }
 
   </script>
