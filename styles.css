@@ -283,6 +283,10 @@ td, th {
     {
        display: block;
     }
+    .pay-head
+    {
+      text-align: center;
+    }
   
 /* index */
 
