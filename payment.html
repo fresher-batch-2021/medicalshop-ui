@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <center><h3>Payment Details</h3></center>
+<form onsubmit="paymentProcess()" >  
+    <div class="Billing">
+      <div class="address">
+        <h3>Billing Address</h3>
+        <label for="name">Name*</label>
+        <input type="text" name="name" id="name" required > <br/>
+        <label for="address">Address*</label>
+        <input type="adr" name="address" id="address" required> <br/>
+        <label for="city">City*:</label>
+        <select id="city" required >
+          <option value="select a city"></option>
+          <option value="chennai">Chennai</option>
+          <option value="coimbatore">coimbatore</option>
+          <option value="madurai">Madurai</option>
+          <option value="Thanjavur">Thanjavur</option>
+          <option value="Theni">Theni</option>
+          <option value="Trichy">Trichy</option>
+          <option value="Villupuram">Villupuram</option>
+          <option value="Virudhunagar">virudhunagar</option>  
+        </select><br>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required ><br>
+        <label for="pin">pincode</label>
+        <input type="text" id="pin" name="pin" required><br>
+      </div>
+      <div class="payment">
+        <h3>Payment</h3>
+        <label id="payment">Payment Mode</label><br>
+        <input type="radio" id="paymentMode" name="payment" value="Cash"><label for="cash">CashOnDelivery</label><br>
+        <input type="radio" id="paymentMode" name="payment" value="card"> <label for="card">Debitcard/CreditCard</label><br>
+        <input type="radio" id="paymentMode" name="payment" value="upi"> <label for="upi">UPI</label><br>
+      </div>
+      <label><input type="checkbox" checked="checked" name="sameadr">Agree</label><br>
+      <button >Proceed</button>
+  </form>
+  <script>
+       function  paymentProcess()
+      {
+          alert("Payment");
+          event.preventDefault();
+          const name=document.querySelector("#name").value;
+          const address=document.querySelector("#address").value;
+          const state=document.querySelector("#state").value;
+          const pin=document.querySelector("#pin").value;
+          const paymentModes = document.querySelectorAll("#paymentMode");
+          let selectedPaymentMode;
+          paymentModes.forEach(rd=>{
+              if(rd.checked){
+                  selectedPaymentMode = rd.value;
+              }
+          })
+          console.log(selectedPaymentMode);  
+          alert("Order placed");
+          window.location.href="home.html";     
+         
+      }
+  </script>
+</div>
+
+</body>
+</html>

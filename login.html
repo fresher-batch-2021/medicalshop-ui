@@ -4,45 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <title>Login</title>
    
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="login">
         <header id="header">
 
         </header>
-		<h3>Login form</h3>
-		<form>
+		<h3 class="head">Login form</h3>
+		<form onsubmit="login()">
         <label for="email">Email*</label>
         <input type="email" name="email" id="email" required > <br/>
         <label for="password">Password*</label>
         <input type="password" name="password" id="password" required> <br/>
-        <button>Login</button>
-    </form>
+        <button class="button">Login</button>
+        <p>Note:  Email=jimin@gmail.com<br>password:123456789</p>
+        </form>
     <script src="assets/js/jquery.min.js"></script>
      <script>
       $("#header").load("header.html")  ;
-      function  register()
+      function  login()
       {
           event.preventDefault();
           const email=document.querySelector("#email").value;
           const password=document.querySelector("#password").value;
-              if (password.length<8)
+              if (email =="jimin@gmail.com" && password =="123456789")
               {
-                 alert("Password must be greater than 8 characters");
+                alert("Login Successfull");
+                window.location.href="index.html";
               }
               else
               {
-                
+                alert("Wrong Password");
                 
                 
               }
 
+        
          
-        //   console.log(userobj);
-          alert("Login Successfull");
       }
   </script>
 </body>

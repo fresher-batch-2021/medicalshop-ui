@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="login">
         <header id="header">
 
             </header>
-    <h3>Register form</h3>
+    <h3 class="head">Register form</h3>
     <form onsubmit="register()">
         <label for="name">Name*</label>
         <input type="text" name="name" id="name" placeholder="Enter the Name" required  autofocus > <br/>
@@ -24,12 +24,14 @@
         <input type="date" name="dob" id="dob"> <br/>
         <label for="password">Password*</label>
         <input type="password" name="password" id="password" required> <br/>
+        <label for="conpassword">ConfrimPassword*</label>
+        <input type="password" name="conpassword" id="conpassword" required> <br/>
         <label>Gender</label>
         <input type="radio" id="Female" name="gender" value="Female">
         <label for="female">Female</label>
         <input type="radio" id="male" name="gender" value="Male">
         <label for="male">Male</label><br>
-        <button>Register</button>
+        <button class="button">Register</button>
     </form>
 
     <script src="assets/js/jquery.min.js"></script>
@@ -43,9 +45,14 @@
           const mobno=document.querySelector("#mobno").value;
           const dob=document.querySelector("#dob").value;
           const password=document.querySelector("#password").value;
+          const conpassword=document.querySelector("#conpassword").value;
               if (password.length<8)
               {
                  alert("Password must be greater than 8 characters");
+              }
+              else if (password !=	conpassword)
+              {
+                 alert("confirm Password must be equal to password");
               }
               else
               {
@@ -55,12 +62,13 @@
               "email":email,
               "mobno":mobno,
               "dob":dob,
-              "password":password
+              "password":password,
+              "conpassword":password
 
                  };
                  console.log(userobj);
                  alert("Registration Successfull");
-                 window.location.href="new.html";
+                 window.location.href="login.html";
               }
          
         

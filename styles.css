@@ -28,8 +28,7 @@ body
 .back
 {
   margin:0px 200px 0px 200px;
-  border: 1px solid grey;
-  padding: 20px;
+ 
 }
 .feature-box{
   width:155px;
@@ -97,6 +96,11 @@ body
   width: 100%;
   padding: 10px 20px;
   border-top: 1px solid #f3f3f3;
+}
+.product-details a {
+ text-decoration: none;
+ border: 1px solid black;
+ color: white;
 }
 .p-name{
   color: #727272;
@@ -166,8 +170,13 @@ p{
     padding-top: -30px;
     
 }
-img{
-  height: 50px;
+.back img{
+  width:100% ;
+  height: auto;
+}
+.img1{
+  height:5%;
+  width: 5%;
 }
 .navitem {
   color:black;
@@ -203,16 +212,77 @@ color:black;
   }
 
   /* register and login form */
+  .login
+  {
+
+      background: url(images/cat1.jpg) no-repeat;
+      background-size: 100%;
+
+  }
   form{
     background-color: cadetblue;
     border: 1px solid #000000;
     padding: 15px;
     margin: 45px 500px 100px 500px;
   }
+  .head
+  {
+      text-align: center;
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+      color: blue;
+  }
+  .button
+  {
+    background-color:lightgreen;
+    color:white;
+  }
 
+/* cart.html */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
 
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.order-button
+{
+  text-decoration: none;
 
+}
+/* payment.html */
+/* .Billing
+    {
+        border: 1px solid black;
+        background-color:lightgray;
+        margin: 100px 500px 100px 500px;
+    } */
+    .address label
+    {
+        color: blue;
+        font-weight:300;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #payment
+    {
+        color: blue;
+        font-weight:300;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .btn {
+      color:blue;
+      text-decoration: none;
+    }
+    label
+    {
+       display: block;
+    }
   
 /* index */
 
