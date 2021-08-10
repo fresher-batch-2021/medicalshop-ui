@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cart</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-                
-                <table>
-                  <caption>Cart Details</caption>
-                        <tr>
-                          <th id="sno">S.No</th>
-                          <th id="productname">ProductName</th>
-                          <th id="price">Price</th>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Nivea</td>
-                          <td>120</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Vicks</td>
-                          <td>80</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Dettol</td>
-                          <td>175</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>volini</td>
-                          <td>64</td>
-                        </tr>
-                       </table>
-                  <h3>Total:RS:409.00</h3>
-                <button><a class="order-button"href="payment.html">Order Now</a></button>
-        
-</body>
-<script>
-  // const cartItems = [ 
-  //   {SNo:"1",ProductName:"Nivea",Price:"Rs.120"},
-  //   {SNo:"2",ProductName:"Vicks",Price:"Rs.80"},
-  //   {SNo:"3",ProductName:"Dettol",Price:"Rs.120"},
-  //   {SNo:"4",ProductName:"Volini",Price:"Rs.120"}
-  //   ]
-  // let content="";
-  // for(let cartobjects of cartitems )
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cartitems</title>
+  </head>
+  <link rel="stylesheet" href="styles.css">
+  <body>
+    <header id="header">  
+    </header>
+      <h3>Cart Items</h3>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>ProductName</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="cart-table">
 
-</script>
+        </tbody>
+        </table>
+       <button> <a  class="order-button" href="payment.html"  >Order Now</a></button>
+      </section>
+ <script src="assets/js/jquery.min.js"></script>
+  <script>
+      $("#header").load("header.html");
+
+      function displayitems() {
+        let cartItems= [
+          {SNo: 1,ProductName:"Nivea", Price:120},
+          {SNo:2,ProductName:"Vicks",Price:80},
+          {SNo:3,ProductName:"Dettol",Price:27},
+          {SNo:4,ProductName:"Volini",Price:87}
+        ];
+
+        let content = " ";
+        for (let cart of cartItems) {
+           let deletebutton=`<a href="cart.html" onClick="deleteitem()" > Delete </a>`
+          content =
+            content +
+            "<tr><td>" + cart.SNo + "</td><td>" + cart.ProductName + "</td><td>" + cart.Price + "</td><td>"+ deletebutton+ "</td><td>";
+        }
+        console.log(content);
+
+        var total=0;
+        for (let i = 0; i < cartItems.length; i++)
+         {
+            total += cartItems[i].Price;
+         }
+         content+="<tr><td colspan='2'>Total </td><td>Rs." + total + "</td></tr>";
+        console.log(total);
+        document.querySelector("#cart-table").innerHTML = content;
+      }
+      displayitems();
+      function deleteitem()
+      {
+        let del=confirm("Do You want remove this item from cart");
+        if(del)
+        {
+          alert("Successfully Deleted");
+          window.location.href="task";
+        }
+        
+      }
+    </script>
+  </body>
 </html>

@@ -7,6 +7,8 @@
     <title>register</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <body class="login">
         <header id="header">
@@ -18,58 +20,68 @@
         <input type="text" name="name" id="name" placeholder="Enter the Name" required  autofocus > <br/>
         <label for="email">Email*</label>
         <input type="email" name="email" id="email" required > <br/>
-        <label for="mobno">MobileNo*</label>
-        <input type="tel" name="mobno" id="mobno" required > <br/>
-        <label for="dob">Date of Birth</label>
-        <input type="date" name="dob" id="dob"> <br/>
+        <label for="mobileNo">MobileNo*</label>
+        <input type="tel" name="mobileNo" id="mobileNo" required > <br/>
         <label for="password">Password*</label>
         <input type="password" name="password" id="password" required> <br/>
-        <label for="conpassword">ConfrimPassword*</label>
-        <input type="password" name="conpassword" id="conpassword" required> <br/>
-        <label>Gender</label>
-        <input type="radio" id="Female" name="gender" value="Female">
-        <label for="female">Female</label>
-        <input type="radio" id="male" name="gender" value="Male">
-        <label for="male">Male</label><br>
+        <label for="confirmpassword">ConfrimPassword*</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" required> <br/>
         <button class="button">Register</button>
     </form>
-
     <script src="assets/js/jquery.min.js"></script>
   <script>
+      
       $("#header").load("header.html")  ;
-      function  register()
+     function  register()
       {
           event.preventDefault();
+          alert("validation");
           const name=document.querySelector("#name").value;
           const email=document.querySelector("#email").value;
-          const mobno=document.querySelector("#mobno").value;
-          const dob=document.querySelector("#dob").value;
+          const mobileNo=document.querySelector("#mobileNo").value;
           const password=document.querySelector("#password").value;
-          const conpassword=document.querySelector("#conpassword").value;
-              if (password.length<8)
-              {
+          const confirmpassword=document.querySelector("#confirmpassword").value;
+          if(name=="" || name==null || name.trim()=="")
+          {
+            alert("Name cannot be null");
+          }
+          else if (password.length<8)
+          {
                  alert("Password must be greater than 8 characters");
-              }
-              else if (password !=	conpassword)
-              {
+          }
+          else if (password !=confirmpassword)
+          {
                  alert("confirm Password must be equal to password");
-              }
-              else
-              {
-                
-                let userobj={
+          }
+          else if(mobileNo.length != 10)
+          {
+                alert("MobileNumber is not valid");
+          }
+          else
+          {
+             const userobj={
               "name":name,
               "email":email,
-              "mobno":mobno,
-              "dob":dob,
+              "mobileNo":mobileNo,
               "password":password,
-              "conpassword":password
-
-                 };
+              "confirmpassword":confirmpassword
+             };
                  console.log(userobj);
-                 alert("Registration Successfull");
-                 window.location.href="login.html";
-              }
+                 const url="https://product-mock-api.herokuapp.com/medicalapp/api/v1/auth/register";
+                 axios.post(url,userobj).then(res=>
+                 {
+                     let data=res.data;
+                     console.log(data);
+                     alert("successfully register");
+                     window.location.href="login.html";
+                 }) .catch(err=>
+                 {
+                     console.error("err");
+                     alert("error");
+                 });
+                 
+                 
+          }
          
         
       }

@@ -16,10 +16,10 @@
         <label for="name">Name*</label>
         <input type="text" name="name" id="name" required > <br/>
         <label for="address">Address*</label>
-        <input type="adr" name="address" id="address" required> <br/>
+        <input type="text" name="address" id="address" required> <br/>
         <label for="city">City*:</label>
-        <select id="city" required >
-          <option value="select a city"></option>
+        <select id="city" name="city" required >
+          <option value="" disabled>--SELECT--</option>
           <option value="chennai">Chennai</option>
           <option value="coimbatore">coimbatore</option>
           <option value="madurai">Madurai</option>
@@ -31,28 +31,27 @@
         </select><br>
         <label for="state">State</label>
         <input type="text" id="state" name="state" required ><br>
-        <label for="pin">pincode</label>
-        <input type="text" id="pin" name="pin" required><br>
+        <label for="pincode">pincode</label>
+        <input type="text" id="pincode" name="pincode" required><br>
       </div>
       <div class="payment">
         <h3>Payment</h3>
         <label id="payment">Payment Mode</label><br>
-        <input type="radio" id="paymentMode" name="payment" value="Cash"><label for="cash">CashOnDelivery</label><br>
-        <input type="radio" id="paymentMode" name="payment" value="card"> <label for="card">Debitcard/CreditCard</label><br>
-        <input type="radio" id="paymentMode" name="payment" value="upi"> <label for="upi">UPI</label><br>
+        <input type="radio" id="paymentMode" name="payment" value="cash" required><label for="cash">CashOnDelivery</label>
+        <input type="radio" id="paymentMode" name="payment" value="card"required> <label for="card">Debitcard/CreditCard</label>
+        <input type="radio" id="paymentMode" name="payment" value="upi" required> <label for="upi">UPI</label>
       </div>
-      <label><input type="checkbox" checked="checked" name="sameadr">Agree</label><br>
       <button >Proceed</button>
   </form>
   <script>
        function  paymentProcess()
       {
-          alert("Payment");
           event.preventDefault();
           const name=document.querySelector("#name").value;
           const address=document.querySelector("#address").value;
+          const city = document.querySelector("#city").value;
           const state=document.querySelector("#state").value;
-          const pin=document.querySelector("#pin").value;
+          const pincode=document.querySelector("#pincode").value;
           const paymentModes = document.querySelectorAll("#paymentMode");
           let selectedPaymentMode;
           paymentModes.forEach(rd=>{
@@ -60,9 +59,36 @@
                   selectedPaymentMode = rd.value;
               }
           })
+          if(name == "" || name == null || name.trim() =="")
+          {
+            alert("Name cannot be null");
+          }
+          else if (address=="" || address==null || address.trim()=="")
+          {
+                 alert("Provide address Details");
+          }
+          else if (city=="" || city==null || city.trim()=="")
+          {
+                 alert("city Name cannot be null");
+          }
+          else if (state=="" || state==null || state.trim()=="")
+          {
+                 alert("State Name cannot be null");
+          }
+
+          else if(pincode.length !=6)
+          {
+                alert("Pincode is not valid");
+          }
+          else if (selectedPaymentMode == null || selectedPaymentMode ==""){
+            alert("Please select Payment Mode");
+          }
+          else
+          {
           console.log(selectedPaymentMode);  
           alert("Order placed");
-          window.location.href="home.html";     
+          window.location.href="index.html";  
+          }   
          
       }
   </script>

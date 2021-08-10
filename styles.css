@@ -185,22 +185,14 @@ p{
   float:right;
 }
 
-.navbar button {
+.navbar a {
   background-color: DodgerBlue;
-  border:solid;
   color: white;
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
   float:right;
   text-decoration:none;
-
-}
-.navbar a
-{
-text-decoration: none;
-color:black;
-
 }
 .navbar input[type=text] {
     float: right;
@@ -239,22 +231,21 @@ color:black;
   }
 
 /* cart.html */
+.order-button
+{
+  text-decoration: none;
+
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 50%;
-
+  width: 100%;
 }
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
-}
-.order-button
-{
-  text-decoration: none;
-
 }
 /* payment.html */
 /* .Billing

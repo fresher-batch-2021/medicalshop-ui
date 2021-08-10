@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <form>
-            <label for="medicine">Name*</label>
-            <input type="text" name="Medicine" id="medicine" placeholder="Enter the medicine name" required  autofocus> <br/>
-            <label for="no">No of item*</label>
-            <input type="number" name="no" id="no" required min=1 > <br/>
-            <button>ORGER NOW<button>
-           
-    </form>    
-      
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cartitems</title>
+  </head>
+  <link rel="stylesheet" href="styles.css">
+  <body>
+    <header id="header">  
+    </header>
+      <h3>Order Details</h3>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>orderId</th>
+              <th>ProductName</th>
+              <th>PaymentDetails</th>
+              <th>DeliveryAddress</th>
+              <th>Deliverystatus</th>
+              <th>DeliverdDate</th>
+            </tr>
+          </thead>
+          <tbody id="cart-table">
+        
+        
+        </tbody>
+        </table>
+       <button> <a  class="order-button" href="index.html"  >Back</a></button>
+      </section>
+ <script src="assets/js/jquery.min.js"></script>
+  <script>
+      $("#header").load("header.html");
+
+      function displayitems() {
+        let Items= [
+          {orderId: "#1",ProductName:"Nivea",Price:120,PaymentDetails:"Mode:UPI,Total:120",DeliveryAddress:"4th,Northstreet,chennai-620998",Deliverystatus:"OutForDelivery",DeliverdDate:"soon"},
+          {orderId:"#2",ProductName:"Vicks",Price:80,PaymentDetails:"Mode:cashondelivery,Total:80",DeliveryAddress:"4th,Northstreet,chennai-620998",Deliverystatus:"Arriving",DeliverdDate:"soon"},
+          {orderId:"#3",ProductName:"Dettol",Price:27,PaymentDetails:"Mode:UPI,Total:27",DeliveryAddress:"4th,weststreet,chennai-620998",Deliverystatus:"OutForDelivery",DeliverdDate:"soon"},
+          {orderId:"#4",ProductName:"Volini",Price:87,PaymentDetails:"Mode:card,Total:87",DeliveryAddress:"4th,Northstreet,chennai-620998",Deliverystatus:"Delivered",DeliverdDate:"08/08/2021"}
+        ];
+
+        let content = "";
+        for (let order of Items) {
+          content =
+            content +
+            "<tr><td>" + order.orderId + "</td><td>" + order.ProductName + "</td><td>" + order.PaymentDetails+ "</td><td>"+ order.DeliveryAddress+ "</td><td>"+order.Deliverystatus+ "</td><td>"+order.DeliverdDate+ "</td><td>";
+        }
+        console.log(content);
+
+        var total=0;
+        for (let i = 0; i < Items.length; i++)
+         {
+            total += Items[i].Price;
+         }
+         content+="<tr><td colspan='2'>AmountPaid </td><td>Rs." + total + "</td></tr>";
+        console.log(total);
+        document.querySelector("#cart-table").innerHTML = content;
+      }
+      displayitems();
+    </script>
+  </body>
 </html>
