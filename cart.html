@@ -16,8 +16,11 @@
           <thead>
             <tr>
               <th>S.No</th>
-              <th>ProductName</th>
+              <th>ProductImage</th>
+              <th>Productname</th>
               <th>Price</th>
+              <th>quantity</th>
+              <th>Total</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -28,46 +31,6 @@
        <button> <a  class="order-button" href="payment.html"  >Order Now</a></button>
       </section>
  <script src="assets/js/jquery.min.js"></script>
-  <script>
-      $("#header").load("header.html");
-
-      function displayitems() {
-        let cartItems= [
-          {SNo: 1,ProductName:"Nivea", Price:120},
-          {SNo:2,ProductName:"Vicks",Price:80},
-          {SNo:3,ProductName:"Dettol",Price:27},
-          {SNo:4,ProductName:"Volini",Price:87}
-        ];
-
-        let content = " ";
-        for (let cart of cartItems) {
-           let deletebutton=`<a href="cart.html" onClick="deleteitem()" > Delete </a>`
-          content =
-            content +
-            "<tr><td>" + cart.SNo + "</td><td>" + cart.ProductName + "</td><td>" + cart.Price + "</td><td>"+ deletebutton+ "</td><td>";
-        }
-        console.log(content);
-
-        var total=0;
-        for (let i = 0; i < cartItems.length; i++)
-         {
-            total += cartItems[i].Price;
-         }
-         content+="<tr><td colspan='2'>Total </td><td>Rs." + total + "</td></tr>";
-        console.log(total);
-        document.querySelector("#cart-table").innerHTML = content;
-      }
-      displayitems();
-      function deleteitem()
-      {
-        let del=confirm("Do You want remove this item from cart");
-        if(del)
-        {
-          alert("Successfully Deleted");
-          window.location.href="task";
-        }
-        
-      }
-    </script>
+  <script src="cart.js"></script>
   </body>
 </html>
