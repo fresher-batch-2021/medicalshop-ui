@@ -1,0 +1,8 @@
+{
+    "Products" :[
+        {"productImage" : "image/nivea.jpg", "productName" :"Nivea", "price" : 120},
+        {"productImage" : "image/vicks.jpg", "productName" :"Vicks", "price" : 80},
+        {"productImage" : "image/dettol.jpg", "productName" :"Dettol", "price" :27},
+        {"productImage" : "image/volini.jpg", "productName" :"Volini", "price" : 87}  
+    ]
+}
