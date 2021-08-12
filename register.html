@@ -19,11 +19,12 @@
         <label for="name">Name*</label>
         <input type="text" name="name" id="name" placeholder="Enter the Name" required  autofocus > <br/>
         <label for="email">Email*</label>
-        <input type="email" name="email" id="email" required > <br/>
+        <input type="email" name="email" id="email" requiredpattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Example mail id : example@example.com" > <br/>
         <label for="mobileNo">MobileNo*</label>
         <input type="tel" name="mobileNo" id="mobileNo" required > <br/>
         <label for="password">Password*</label>
-        <input type="password" name="password" id="password" required> <br/>
+        <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" > <br/>
         <label for="confirmpassword">ConfrimPassword*</label>
         <input type="password" name="confirmpassword" id="confirmpassword" required> <br/>
         <button class="button">Register</button>

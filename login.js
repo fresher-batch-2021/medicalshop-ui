@@ -21,12 +21,13 @@ function  login()
            axios.post(url,userobj).then(res=>
            {
                let data=res.data;
+               localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
                console.log(data);
                alert("successfully logged in");
                window.location.href="index.html";
            }) .catch(err=>
            {
-               console.error("err");
+             console.error("err");
                alert("Incorrect Password");
            });
           
@@ -34,5 +35,4 @@ function  login()
         }
 
   
-   
 }

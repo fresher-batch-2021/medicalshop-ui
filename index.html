@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </head>
 <body>
    <header id="header">  
    </header>
-    <div class="slideshow-container">
+   <div class="slideshow_container">
+    <!-- Image slider is here -->
+</div>
+    <!-- <div class="slideshow-container">
         <div class="mySlides fade">
           <img src="images/off.jpg" alt="show image"style="width:100%">
         </div>
@@ -25,7 +33,7 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
         
-  </div>
+  </div> -->
 <br>
 <br>
 <section  class="cat">
@@ -99,96 +107,14 @@
 </section>
 <br>
 <br>
-<section  class="cat1">
+<section class="cat1">
     <hr>
    <h2 class="catagoriestitles">Products</h2>
    <br>
    <hr>
-   <div class="product-container">
-    <div class="product-box">
-        <div class="product-img">
-            <img src="images/nivea.jpg" alt="Show Image">
-        </div>
-        <div class="product-details">
-            <span>Nivea</span>
-            <span class="p-price">Rs.120</span>
-            <button><a href="cart.html" >ADD TO CART</a></button>
-        </div>
-    </div>
-    <div class="product-box">
-      <div class="product-img">
-          <img src="images/vicks.jpg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>Vicks</span>
-          <span class="p-price">Rs.70</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/dettol.jpg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>Dettol</span>
-          <span class="p-price">Rs.175</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/volini.jpg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>Volini</span>
-          <span class="p-price">Rs.64</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/paracetamal.jpeg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>Paracetamal</span>
-          <span class="p-price">Rs.30</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/naltivia.jpg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>Naltivia</span>
-          <span class="p-price">Rs.80</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/brilinta.jpeg" alt="Show Image"> 
-      </div>
-      <div class="product-details">
-          <span>Brilinta</span>
-          <span class="p-price">Rs.20</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/syrup.jpg" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <span>SyruP</span>
-          <span class="p-price">Rs.210</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
+<div  class="product-container" id="producttable">
 </div>
-
 </section>
- 
 
 <footer id="footer">  
 </footer>
@@ -196,5 +122,6 @@
   <script src="assets/js/jquery.min.js"></script>
   <script src="index.js">
   </script>
+  <script src="assets/js/indexproducts.json"></script>
 </body>
 </html>

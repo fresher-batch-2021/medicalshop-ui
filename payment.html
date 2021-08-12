@@ -9,14 +9,14 @@
 </head>
 <body>
   <h3 class="pay-head">Payment Details</h3>
-<form onsubmit="paymentProcess()" >  
+<form  >  
     <div class="Billing">
       <div class="address">
         <h3>Billing Address</h3>
         <label for="name">Name*</label>
         <input type="text" name="name" id="name" required > <br/>
-        <label for="address">Address*</label>
-        <input type="text" name="address" id="address" required> <br/>
+        <label for="street">Street*</label>
+        <input type="text" name="street" id="street" required> <br/>
         <label for="city">City*:</label>
         <select id="city" name="city" required >
           <option value="" disabled>--SELECT--</option>
@@ -34,14 +34,7 @@
         <label for="pincode">pincode</label>
         <input type="text" id="pincode" name="pincode" required><br>
       </div>
-      <div class="payment">
-        <h3>Payment</h3>
-        <label id="payment">Payment Mode</label><br>
-        <input type="radio" id="paymentMode" name="payment" value="cash" required><label for="cash">CashOnDelivery</label>
-        <input type="radio" id="paymentMode" name="payment" value="card"required> <label for="card">Debitcard/CreditCard</label>
-        <input type="radio" id="paymentMode" name="payment" value="upi" required> <label for="upi">UPI</label>
-      </div>
-      <button >Proceed</button>
+      <button onclick="paymentProcess()">Proceed</button>
   </form>
 </div>
 <script src="payment.js"></script>

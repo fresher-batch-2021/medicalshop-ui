@@ -1,8 +1,0 @@
-{
- "cartitems" :[
-    {"productImage" : "image/nivea.jpg", "productName" :"Nivea", "price" : 120,"quantity" : 1},
-    {"productImage" : "image/vicks.jpg", "productName" :"Vicks", "price" : 80,"quantity" : 2},
-    {"productImage" : "image/dettol.jpg", "productName" :"Dettol", "price" :27,"quantity" : 1},
-    {"productImage" : "image/volini.jpg", "productName" :"Volini", "price" : 87,"quantity" : 1}  
-]
-}
