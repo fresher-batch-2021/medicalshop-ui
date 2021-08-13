@@ -51,17 +51,14 @@ axios.get(url).then((res) => {
   for (let productobj of products) {
     content =
       content +  `<div class="product-box">
-
       <div class="product-img">
           <img src="${productobj.productImage}" alt="Show Image">
       </div>
-
       <div class="product-details">
           <div>${productobj.productName}</div>
           <div class="p-price">Rs.${productobj.price}</div>
           <button><a class="addtocart"href="cart.html?productName=${productobj.productName}&price=Rs.${productobj.price}" >ADD TO CART</a></button>
       </div>
-
   </div>`
 }
   console.log(content);
@@ -70,4 +67,3 @@ axios.get(url).then((res) => {
 }).catch((err) => {
   console.log("err", err);
 })
-

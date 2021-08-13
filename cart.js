@@ -54,7 +54,7 @@ $("#header").load("header.html");
       {
         console.log("productname", list.proName);
         console.log("proprice", list.proPrice);
-        let quantitybutton=` <input type="number" name="quantity"  id="quantityv" value=4 min="1"  required>`
+        let quantitybutton=` <input type="number" name="quantity"  id="quantityv" value=1 min="1" readonly required>`
         console.log("#quantity");
         let deletebutton=`<a href="cart.html" onClick="deleteitem()" ><img src="images/delete.png" alt="show image"></a>`
        
@@ -62,12 +62,6 @@ $("#header").load("header.html");
         itemList +
         "<tr><td>" +list.proName + "</td><td>" + list.proPrice +"</td><td>" + quantitybutton +"</td>";
       }
-      function qty()
-      {
-        let quality=1;
-
-      }
-      
       document.querySelector("#cart-table").innerHTML = itemList;
 
       localStorage.setItem("productList",JSON.stringify(productList));
