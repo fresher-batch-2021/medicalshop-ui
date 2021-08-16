@@ -24,7 +24,7 @@ function  register()
            alert("MobileNumber is not valid");
      }
      else
-     {
+     {  
         const userobj={
          "name":name,
          "email":email,
@@ -33,21 +33,33 @@ function  register()
          "confirmpassword":confirmpassword
         };
             console.log(userobj);
-            const url="https://product-mock-api.herokuapp.com/medicalapp/api/v1/auth/register";
-            axios.post(url,userobj).then(res=>
-            {
-                let data=res.data;
-                console.log(data);
-                alert("successfully register");
-                window.location.href="login.html";
-            }) .catch(err=>
-            {
-                console.error("err");
-                alert("error");
-            });
+            registerUser(userobj);
+           
+           
             
             
      }
     
    
+ }
+
+ function registerUser(userobj){
+     
+    const dbUsername="apikey-v2-qnl37sqy0oqwj8owtrhj6kam3p39wzmc0d46oflhvln";
+    const dbPassword="cb14c8c9976ced0867c79d8eb625505a";
+    const basicAuth='Basic ' + btoa(dbUsername + ':' + dbPassword);
+    console.log(basicAuth);
+    const url="https://a1b21745-8512-41b2-8506-c83a13a27993-bluemix.cloudantnosqldb.appdomain.cloud/medicalshop_users";
+  
+
+    axios.post(url,userobj,{ headers :{ 'Authorization':basicAuth }}).then(res=>
+        {
+            let data=res.data;
+            console.log(data);
+            alert("successfully register");
+            window.location.href="login.html";
+        }) .catch(err=>
+        {   console.error(err.response.data);
+            alert("error");
+        });
  }
