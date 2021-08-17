@@ -6,7 +6,7 @@ function  register()
      const email=document.querySelector("#email").value;
      const mobileNo=document.querySelector("#mobileNo").value;
      const password=document.querySelector("#password").value;
-     const confirmpassword=document.querySelector("#confirmpassword").value;
+     const confirmPassword=document.querySelector("#confirmPassword").value;
      if(name=="" || name==null || name.trim()=="")
      {
        alert("Name cannot be null");
@@ -15,7 +15,7 @@ function  register()
      {
             alert("Password must be greater than 8 characters");
      }
-     else if (password !=confirmpassword)
+     else if (password !=confirmPassword)
      {
             alert("confirm Password must be equal to password");
      }
@@ -30,7 +30,7 @@ function  register()
          "email":email,
          "mobileNo":mobileNo,
          "password":password,
-         "confirmpassword":confirmpassword
+         "confirmPassword":confirmPassword
         };
             console.log(userobj);
             registerUser(userobj);
