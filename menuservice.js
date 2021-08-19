@@ -1,0 +1,29 @@
+ const medicine=[
+    {"productImage" : "images/nivea.jpg", "productName" :"Nivea", "price" : 120},
+    {"productImage": "images/vicks.jpg", "productName" :"Vicks", "price" : 80},
+    {"productImage" : "images/dettol.jpg", "productName":"Dettol", "price" :27},
+    {"productImage": "images/volini.jpg", "productName" :"Volini", "price": 87}  ,
+    {"productImage" : "images/brilinta.jpeg","productName" :"Brilinta", "price" :20},
+    {"productImage": "images/kera.jpg", "productName" :"kera", "price" : 180},
+    {"productImage" : "images/heximar.jpg", "productName":"Heximar", "price" :511},
+    {"productImage": "images/glycodin.jpg", "productName" :"Glycodin", "price": 254}  
+  ]
+
+  class menubar
+  {
+      static getMedicine()
+      {
+          return medicine;
+      }
+      static searchByName()
+      {
+          let result=[];
+          for(medicineObj of medicine)
+          {
+              if(medicineObj.productName==productName)
+                result.push(medicineobj);
+          }
+          return result;
+
+      }
+  }

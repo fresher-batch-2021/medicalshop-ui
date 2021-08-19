@@ -13,25 +13,30 @@
     </header>
       <section>
         <table class="carttable">
-          <caption class="carthead">CartItems</caption>
+          <caption class="carthead">CartItems(<span id="countValue"></span></span>)</caption>
           <thead>
             <tr>
+              <th id="sno">SNO</th>
               <th id="productName">Productname</th>
               <th id="productPrice">Price</th>
-              <th id="quantity">quantity</th>
-              <!-- <th id="Total">Total</th> -->
-              <!-- <th id="Actions">Actions</th> -->
+              <th id="quantityvalue">quantity</th>
+              <th id="Total">Total</th>
+              <th id="Actions">Actions</th>
             </tr>
           </thead>
           <tbody id="cart-table">
         </tbody>
+         <tr id="#total-value"></tr>
         </table>
         <br>
-        <div class="orderbutton">
-       <button> <a  class="order-button" href="payment.html"  >Order Now</a></button>
-      </div>
+  <div class="tablebutton">
+  <span class="orderbutton"><button><a  class="order-button" href="products.html">continue shopping</a></button></span>
+  <span class="orderbutton"><button type="button" ><a  class="order-button" onClick="cartCheck();">Order Now</a></button></span>
+  <span class="orderbutton"> <button class="order-button" onclick="emptyCart();">Empty Cart</button></span>
+  <div>
       </section>
  <script src="assets/js/jquery.min.js"></script>
+ <script src="header.js"></script>
   <script src="cart.js"></script>
   </body>
 </html>

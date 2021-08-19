@@ -11,23 +11,26 @@
     <header id="header">  
     </header>
       <section>
-        <table>
-          <caption>Order Details</caption>
+        <table class="carttable">
+          <caption class="carthead"> CheckOut List</caption>
           <thead>
             <tr>
               <th id="ProductName">ProductName</th>
-              <th id="Productprice">Productprice</th>
+              <th id="ProductPrice">Productprice</th>
+              <th id="QuantityHead">Quantity</th>
               <th id="DeliveryAddress">DeliveryAddress</th>
             </tr>
           </thead>
           <tbody id="ordertable">
-        
-        
+            <!-- <tbody id="ordertableadd"></tbody> -->
         </tbody>
         </table>
-       <button> <a  class="order-button" href="index.html"  >Back</a></button>
+        <div class="tablebutton">
+       <button class="orderbutton"><a class="order-button"  onclick='checkLogin1()'>Proceed</a></button>
+        </div>
       </section>
  <script src="assets/js/jquery.min.js"></script>
   <script src="order.js"></script>
+  <script src="cart.js"></script>
   </body>
 </html>

@@ -1,30 +1,28 @@
 <link rel="stylesheet" href="styles.css">
-<header> 
+<header>
 <nav class="navbar">  
       <img class="img1" src="images/med1.png" alt="logo"><span class="medshopfnt">Med Shop</span>
-      <a href='#' onclick='logout()'> Logout</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a> 
-      <a href="order.html" >orders</a>
-     <a href="products.html" >Products</a>
-      <a href="index.html" >Home</a>
-      
+      <span class="option" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+       <span class="navlinks"></span>   
+       <a href="register.html" >Register</a> 
+       <a href="cart.html"  >Cart</a>
+       <a href="products.html" >Products</a>
+       <a href="index.html" >Home</a>
+    <div class="welcome" id="loggedIn"> </div>
 </nav>
-<div class="welcome" id="loggedIn"> </div>
+<div class="welcome" id="loggedIn1"> </div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div> 
+   <img src="images/person.png" alt="no">
+   <span id="loggedIn"></span> 
+ </div>
+  <a href="MyOrder.html"><img src="images/mybag.png">MyOrders</a>
+  <a href="cart.html"><img src="images/cart1.png" alt="cart">Cart</a>
+  <a href="addressBook.html"><img src="images/addressbook.png" alt="cart">AddressBook</a>
+  <a href="#">Orders</a>
+</div> 
 </header>
-<script>
-                    function checkLogin() {
-                        let userStr = localStorage.getItem("LOGGED_IN_USER");
-                        let user = userStr != null ? JSON.parse(userStr):null;
-                        if (user != null){
-                           document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.email;
-                        }
-      
-                        }
-                        checkLogin();
-                        function logout(){
-                                localStorage.removeItem("LOGGED_IN_USER");
-                                window.location.href="login.html";
-                        }
-
+<script src="header.js"></script>
+<script src="cart.js"></script>
 </script>

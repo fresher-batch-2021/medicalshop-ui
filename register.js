@@ -7,24 +7,12 @@ function  register()
      const mobileNo=document.querySelector("#mobileNo").value;
      const password=document.querySelector("#password").value;
      const confirmPassword=document.querySelector("#confirmPassword").value;
-     if(name=="" || name==null || name.trim()=="")
-     {
-       alert("Name cannot be null");
-     }
-     else if (password.length<8)
-     {
-            alert("Password must be greater than 8 characters");
-     }
-     else if (password !=confirmPassword)
-     {
-            alert("confirm Password must be equal to password");
-     }
-     else if(mobileNo.length != 10)
-     {
-           alert("MobileNumber is not valid");
-     }
-     else
-     {  
+     try{
+
+     
+        RegisterValidation.validate(name,email,mobileNo,password,confirmPassword)
+     
+     
         const userobj={
          "name":name,
          "email":email,
@@ -33,26 +21,8 @@ function  register()
          "confirmPassword":confirmPassword
         };
             console.log(userobj);
-            registerUser(userobj);
-           
-           
-            
-            
-     }
-    
-   
- }
-
- function registerUser(userobj){
-     
-    const dbUsername="apikey-v2-qnl37sqy0oqwj8owtrhj6kam3p39wzmc0d46oflhvln";
-    const dbPassword="cb14c8c9976ced0867c79d8eb625505a";
-    const basicAuth='Basic ' + btoa(dbUsername + ':' + dbPassword);
-    console.log(basicAuth);
-    const url="https://a1b21745-8512-41b2-8506-c83a13a27993-bluemix.cloudantnosqldb.appdomain.cloud/medicalshop_users";
-  
-
-    axios.post(url,userobj,{ headers :{ 'Authorization':basicAuth }}).then(res=>
+        
+            userService.register(userobj).then(res=>
         {
             let data=res.data;
             console.log(data);
@@ -62,4 +32,11 @@ function  register()
         {   console.error(err.response.data);
             alert("error");
         });
+    }
+        catch(err)
+        {
+            console.error(err.message);
+            alert("error"+err.message);
+        }
  }
+

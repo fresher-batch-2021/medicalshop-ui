@@ -40,8 +40,7 @@ function  paymentProcess()
               "state":state,
               "pincode": pincode
              };
-           
-         localStorage.setItem("paymentaddress",JSON.stringify(addressobj));
+          localStorage.setItem("paymentaddress",JSON.stringify(addressobj));
           alert("Order placed");
           window.location.href="order.html";  
           }   

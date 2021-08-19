@@ -1,105 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tablets</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
- 
-  <section  class="cat1">
-    <hr>
-   <h2 class="catagoriestitles">Tablets</h2>
-   <br>
-   <div class="product-container">
-    <div class="product-box">
-        <div class="product-img">
-            <img src="images/paracetamal.jpeg" alt="show image">
+    <section class="cat1">
+        <hr>
+        <h2 class="catagoriestitles">Tablets</h2>
+        <br>
+        <hr>
+        <div class="product-container" id="tablettable">
         </div>
-        <div class="product-details">
-            <span>Paracetamel</span>
-            <span class="p-price">Rs.30</span>
-            <button><a href="cart.html" >ADD TO CART</a></button>
-        </div>
-    </div>
-    <div class="product-box">
-      <div class="product-img">
-          <img src="images/brilinta.jpeg" alt="show image">
-      </div>
-      <div class="product-details">
-        <span>Brilinta</span>
-          <span class="p-price">Rs.20</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/naltivia.jpg" alt="show image">
-      </div>
-      <div class="product-details">
-          <span>Naltivia</span>
-          <span class="p-price">Rs.80</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/adderall.jpg" alt="show image">
-      </div>
-      <div class="product-details">
-           <span>Adderall</span>
-          <span class="p-price">Rs.64</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div>
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/humira.jpg" alt="show image">
-      </div>
-      <div class="product-details">
-          <span>Humira</span>
-          <span class="p-price">Rs.52</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
-  <div class="product-box">
-      <div class="product-img">
-          <img src="images/metroprolol.jpg" alt="show image">
-      </div>
-      <div class="product-details">
-          <span>Metroprolol</span>
-          <span class="p-price">Rs.104</span>
-          <button><a href="cart.html" >ADD TO CART</a></button>
-      </div>
-  </div> 
-</div>
-
-</section>
-
-<script>
-     function  card()
-      {
-          event.preventDefault();
-          const productname=document.querySelector("#productname").value;
-          const price=document.querySelector("#price").value;
-          const qnt=document.querySelector("#qnt").value;
-          let userobj={
-              "productname":productname,
-              "price":price,
-              "qnt":qnt,
-         };
-         
-          alert("order Placed");
-          window.location.href="cart.html";
+    </section>
+    <script src="productservice.js"></script>
+    
+    <script src="tablet.js"></script>
 
 
-      }
-
-</script>
-
-     
-      
 </body>
+
 </html>

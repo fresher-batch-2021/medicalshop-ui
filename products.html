@@ -4,41 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>products</title>
    <!-- <link rel="stylesheet" href="styles.css"> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+   integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <body>
   <header id="header">
 
   </header>
-    <div class="catagories">
-        <p style="font-style:oblique;font-size:100%">catagories</p>
-            <div class="column">
-              <a href="tablets.html"><img   src="images/pills.jpeg" alt="tab"width="30%" height="50%"> </a>
-              <div class="text-block">
-                <h2>Tablets</h2>
-              </div>
-            </div>
-            <div class="column">
-              <a href="lotions.html"><img   src="images/lotion.jpg" alt="lotion" width="30%" height="50%"> </a>
-              <div class="text-block">
-                <h2>Lotions</h2>
-              </div>
-            </div>
-            <div class="column">
-              <a href="syrup.html"><img   src="images/syrup.jpg" alt="syrup" width="30%" height="50%"> </a>
-              <div class="text-block">
-                <h2>Syrup</h2>
-              </div>
-            </div>
-            <div class="column">
-              <a href="oilment.html"><img   src="images/oilments.jpg" alt="lotion"  width="30%" height="50%"> </a>
-              <div class="text-block">
-                <h2>oilments</h2>
-              </div>
-            </div>
+  <section class="cat1">
+    <hr>
+   <h2 class="catagoriestitles">Products</h2>
+   <br>
+   <hr>
+<div  class="product-container" id="producttable">
+</div>
+</section>
      <script src="assets/js/jquery.min.js"></script>
      <script>
          $("#header").load("header.html")  ;
      </script>
+       <script src="product.js"></script>
+       
 </body>
 </html>

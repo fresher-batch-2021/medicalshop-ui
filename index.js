@@ -13,7 +13,7 @@ function addSliderImages(){
 }
 var slideIndex = 0;
 //to change image in slider change the data here 
-let slideData = ["images/off.jpg", "images/off1.jpg"];
+let slideData = ["images/off.jpg", "images/banner2.jpg"];
 
 function showSlides() {
 
@@ -37,33 +37,3 @@ function showSlides() {
 
 addSliderImages();
 showSlides();
-
-
-
-
-
-const url = "assets/js/indexproducts.json";
-console.log("url", url);
-axios.get(url).then((res) => {
-  let products = res.data;
-  console.table(products);
-  let content = " ";
-  for (let productobj of products) {
-    content =
-      content +  `<div class="product-box">
-      <div class="product-img">
-          <img src="${productobj.productImage}" alt="Show Image">
-      </div>
-      <div class="product-details">
-          <div>${productobj.productName}</div>
-          <div class="p-price">Rs.${productobj.price}</div>
-          <button><a class="addtocart"href="cart.html?productName=${productobj.productName}&price=Rs.${productobj.price}" >ADD TO CART</a></button>
-      </div>
-  </div>`
-}
-  console.log(content);
-  document.querySelector("#producttable").innerHTML = content;
-
-}).catch((err) => {
-  console.log("err", err);
-})

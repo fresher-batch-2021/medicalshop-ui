@@ -15,11 +15,17 @@ function login() {
       if (data.length == 0) {
         alert("Invalid login");
       }
+
       else {
         const user = data[0];
         localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
+        localStorage.setItem("logIn",JSON.stringify(true));
         alert("successfully logged in");
-      
+        window.location.href="index.html";
+        let params = new URLSearchParams(window.location.search.substr(1));
+        if (params.has("redirectURL")){
+          window.location.href= params.get("redirectURL");
+        }
       }
     }).catch(err => {
       console.error(err.response.data);

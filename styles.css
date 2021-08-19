@@ -5,13 +5,18 @@
     
 }
 /* index.html */
+
 /* image slider */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   position: relative;
   margin:100px 200px 100px 500px;
 }
-
+.imgSlide
+{
+  width: 100%;
+  height: 600px;
+}
 /* Next & previous buttons */
 .prev, .next {
   position: absolute;
@@ -89,6 +94,80 @@ body
   justify-content: center !important;
   margin: 10px auto 40px auto;
 }
+/* INDEX MENU */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:lightblue;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.option{
+  font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 3.3%;
+    color: blue;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
 /* index products */
 .product-container{
   width:90%;
@@ -181,9 +260,10 @@ p{
 }
 .welcome
 {
+  background-color:cadetblue;
   font-size: xx-large;
   font-family: sans-serif;
-  color: #000000;
+  color:black;
   text-align: center;
 }
  header { 
@@ -225,7 +305,7 @@ p{
 }
 
 .navbar a {
-  background-color: DodgerBlue;
+  /* background-color: DodgerBlue; */
   color: white;
   padding: 10px 15px;
   font-size: 16px;
@@ -272,10 +352,13 @@ p{
 /* cart.html */
 .order-button
 {
-    text-decoration: none;
-    background-color: green;
-    color: white;
-    font-size: large;
+  background-color: DodgerBlue;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  float:right;
+  text-decoration:none;
 
 }
 .orderbutton
@@ -283,30 +366,77 @@ p{
    text-align: center;
 
 }
-table {
+/* table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-}
+} */
 .carttable {
-  text-align: center;
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    margin: 25px 50px 10px 405px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-.carthead
+.carttable thead tr {
+  background-color:blue;
+  color: #ffffff;
+  text-align: left;
+}
+.carttable th,
+.carttable td {
+    padding: 12px 15px;
+}
+.totalRow
+{
+ color: blue;
+ font-style:normal;
+ font-weight: bolder;
+}
+.tablebutton
+{
+  text-align: center;
+}
+ .carthead
 {
   font-size: large;
   font-style:normal;
   font-weight: bolder;
+  color: blue;
+}
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-td, th {
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form {
+  border-radius: 5px;
+  background-color:lightskyblue;
+  padding: 20px;
+}
+
+
+/* td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-/* payment.html */
+payment.html */ 
 /* .Billing
     {
         border: 1px solid black;
@@ -337,6 +467,25 @@ td, th {
     {
       text-align: center;
     }
+    /* placeorder */
+    .Placeorder
+    {
+      margin-top: 100px;
+      margin-bottom:100px;
+      margin-left: 500px;
+      margin-right: 100px;
+    }
+    /* addressbox */
+    .box
+    {
+      width: 160px;
+    height: 80px;
+  padding: 20px;
+  border: 2px solid black;
+  background:lightskyblue;
+  margin: 200px 200px 300px 400px;
+    }
+
   
 /* index */
 
