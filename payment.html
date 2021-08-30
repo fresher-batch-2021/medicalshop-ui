@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
-  <h3 class="pay-head">Payment Details</h3>
-<form  >  
-    <div class="Billing">
-      <div class="address">
-        <h3>Billing Address</h3>
-        <label for="name">Name*</label>
-        <input type="text" name="name" id="name" required > <br/>
-        <label for="street">Street*</label>
-        <input type="text" name="street" id="street" required> <br/>
-        <label for="city">City*:</label>
-        <select id="city" name="city" required >
+    <header id="header"></header>
+    <h3 class="titles">Payment Details</h3>
+
+    <form>
+        <div class="Billing">
+            <div class="address">
+                <h3>Billing Address</h3>
+                <label for="name">Name*</label>
+                <input type="text" name="name" id="name" required> <br/>
+                <label for="phoneNumber">Contact Number</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" required pattern="[6-9]{1}[0-9]{9}"><br>
+                <label for="date">Delivery Date:</label>
+                <input type="date" name="date" id="date" required><br>
+                <label for="street">Street*</label>
+                <input type="text" name="street" id="street" required> <br/>
+                <label for="city">City*:</label>
+                <select id="city" name="city" required>
           <option value="" disabled>--SELECT--</option>
           <option value="chennai">Chennai</option>
           <option value="coimbatore">coimbatore</option>
@@ -29,14 +38,40 @@
           <option value="Villupuram">Villupuram</option>
           <option value="Virudhunagar">virudhunagar</option>  
         </select><br>
-        <label for="state">State</label>
-        <input type="text" id="state" name="state" required ><br>
-        <label for="pincode">pincode</label>
-        <input type="text" id="pincode" name="pincode" required><br>
-      </div>
-      <button class="orderbutton"onclick="paymentProcess()">Proceed</button>
-  </form>
-</div>
-<script src="payment.js"></script>
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required><br>
+                <label for="pincode">pincode</label>
+                <input type="text" id="pincode" name="pincode" required><br>
+            </div>
+            <label for="totalAmount">Totalamount</label>
+            <input type="text" id="totalAmount" autocomplete="off" required> </div><br>
+        <button class="orderbutton" onclick="orderNow()">Proceed</button>
+    </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="payment.js"></script>
+    <script src="/userservice.js"></script>
+    <script src="/payment-validation.js"></script>
+    <script>
+        $("#header").load("header.html");
+    </script>
 </body>
+<script>
+    $(function() {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var minDate = year + '-' + month + '-' + day;
+
+        $('#date').attr('min', minDate);
+    });
+</script>
+
 </html>

@@ -5,29 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    <link rel="stylesheet" href="styles.css">
+    <title>AdminLogin</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body class="login">
-    <header id="header">
-
-    </header>
-    <h3 class="titles">Login form</h3>
+<body>
+    <header id="header"></header>
+    <h3 class="titles">Admin Login form</h3>
     <form onsubmit="login()">
         <label for="email">Email*</label>
         <input type="email" name="email" id="email" required autocomplete="off"> <br/>
         <label for="password">Password*</label>
         <input type="password" name="password" id="password" autocomplete="off" required title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"> <br/>
-        <button class="formButton" onclick="checkLogin()">Login</button>
+        <button class="formButton" onclick="adminlogin()">Login</button>
     </form>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="login.js"></script>
-    <script src="header.js"></script>
-    <script src="order.js"></script>
-    <script src="userservice.js"></script>
 </body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="admin_login.js"></script>
+<script src="userservice.js"></script>
+<script>
+    $("#header").load("admin_header.html");
+</script>
 
 </html>

@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>products</title>
-   <!-- <link rel="stylesheet" href="styles.css"> -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-   integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<body>
-  <header id="header">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  </header>
-  <section class="cat1">
+    <body>
+        <header id="header">
+
+        </header>
+        <!-- <section class="cat1">
     <hr>
    <h2 class="catagoriestitles">Products</h2>
    <br>
    <hr>
 <div  class="product-container" id="producttable">
 </div>
-</section>
-     <script src="assets/js/jquery.min.js"></script>
-     <script>
-         $("#header").load("header.html")  ;
-     </script>
-       <script src="product.js"></script>
-       
-</body>
+</section> -->
+        <section class="productContainer">
+            <h2 class="titles">Products</h2>
+            <div id="producttable"></div>
+        </section>
+        <script src="assets/js/jquery.min.js"></script>
+        <script>
+            $("#header").load("header.html");
+        </script>
+
+        <script src="/productservice.js"></script>
+        <script src="/product.js"></script>
+    </body>
+
 </html>

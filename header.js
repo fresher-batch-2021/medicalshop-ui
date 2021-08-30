@@ -1,48 +1,32 @@
-
-function logIn() {
-    let login = JSON.parse(localStorage.getItem("logIn"));
-    if (login == null || login == undefined) { login = false; }
-    let content = "";
-    if (login) {
-        content = `<a class="navlinks" onclick="logout()">logout</a>`;
+function toShow() {
+    let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    console.log(userStr);
+    if (userStr != null) {
+        // localStorage.setItem("isLoggedIn",JSON.stringify(true))
+        $(".navlink[data-loggedin='true']").show();
+        $(".navlink[data-loggedin='false']").hide();
+        // $("#profile").html("Welcome " + user.email + "!!!");
     } else {
-        content = `<a class="navlinks" href="login.html">login</a>`;
+        // localStorage.setItem("isLoggedIn",JSON.stringify(false))
+        $(".navlink[data-loggedin='true']").hide();
+        $(".navlink[data-loggedin='false']").show();
     }
-    document.querySelector(".navlinks").innerHTML = content;
 }
+
 function checkLogin() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
-    let login = JSON.parse(localStorage.getItem("logIn"));
-    if (login = true) {
-        document.querySelector("#loggedIn").innerHTML = "welcome" + user.email + "</a>";
-    }
-}
-function LoginForAddress() {
-    let userStr = localStorage.getItem("LOGGED_IN_USER");
-    let user = userStr != null ? JSON.parse(userStr) : null;
+    console.log(user);
     if (user != null) {
-        let addressStr = localStorage.getItem("paymentaddress");
-        let addressObj = JSON.parse(addressStr);
-        console.log(addressStr);
-        let paymentObj = Object.assign(orderObj, addressObj);
-        console.log(paymentObj);
-        document.querySelector("#loggedIn1").innerHTML = "Welcome <a href = 'profile.html'>" + paymentObj;
+        document.querySelector("#loggedIn").innerHTML = "welcome" + " " + user.email + "</a>";
     }
-
 }
+checkLogin();
+toShow();
+
 function logout() {
-    localStorage.setItem("logIn", JSON.stringify(false));
     localStorage.removeItem("PRODUCTS");
     localStorage.removeItem("LOGGED_IN_USER");
     localStorage.removeItem("cartCount");
     window.location.href = "index.html";
 }
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-logIn();

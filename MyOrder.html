@@ -2,35 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyOrderList</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <title>Myorders</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <link rel="stylesheet" href="styles.css">
-  <header id="header">
-  </header>
-  <section>
-    <table class="carttable">
-      <caption class="carthead">My Orders</caption>
-      <thead>
-        <tr>
-          <th id="ProductName">ProductName</th>
-          <th id="ProductPrice">Productprice</th>
-          <th id="QuantityHead">Quantity</th>
-          <th id="DeliveryAddress">DeliveryAddress</th>
-        </tr>
-      </thead>
-      <tbody id="ordertable">
-    </tbody>
+    <header id="header"></header>
+    <!-- <h1>my orders</h1>
+    <div class="myOrderContainer" id="myOrderContainer"></div> -->
+    <table class="table-content">
+        <caption class="table-head"> My Orders</caption>
+        <thead>
+            <tr>
+                <th id="ProductName">ProductName</th>
+                <th id="ProductPrice">Productprice</th>
+                <th id="QuantityHead">Quantity</th>
+                <th id="Total">Total</th>
+                <th id="OrderStatus">OrderStatus</th>
+                <th id="OrderedDate">OrderedDate</th>
+            </tr>
+        </thead>
+        <tbody id="myOrderContainer">
+        </tbody>
     </table>
-  </section>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="order.js"></script>
-  <script src="cart.js"></script>
-  <script src="myOrder.js"></script>
+
+    <script>
+        $("#header").load("header.html");
+    </script>
+    <script src="userservice.js"></script>
+    <script src="myorder.js"></script>
 
 </body>
 

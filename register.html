@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +12,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <body class="login">
-        <header id="header">
+    <header id="header">
 
-            </header>
-    <h3 class="head">Register form</h3>
+    </header>
+    <h3 class="titles">Register form</h3>
     <form onsubmit="register()">
         <label for="name">Name*</label>
-        <input type="text" name="name" id="name" placeholder="Enter the Name" pattern="[A-Za-z ]{1,32}" required autocomplete="off" autofocus > <br/>
+        <input type="text" name="name" id="name" pattern="[A-Za-z ]{1,32}" required autocomplete="off" autofocus> <br/>
         <label for="email">Email*</label>
-        <input type="email" name="email" id="email" required autocomplete="off" pattern="[a-z0-9._]+@[a-z]+\.[a-z]{2,3}$" title="Example mail id : example@example.com" > <br/>
+        <input type="email" name="email" id="email" required autocomplete="off" pattern="[a-z0-9._]+@[a-z]+\.[a-z]{2,3}$" title="Example mail id : example@example.com"> <br/>
         <label for="mobileNo">MobileNo*</label>
         <input type="tel" name="mobileNo" id="mobileNo" autocomplete="off" required pattern="[6-9]{1}[0-9]{9}"> <br/>
         <label for="password">Password*</label>
-        <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" > <br/>
+        <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"> <br/>
         <label for="confirmPassword">ConfrimPassword*</label>
         <input type="password" name="confirmPassword" id="confirmPassword" required> <br/>
-        <button class="button">Register</button>
+        <button class="formButton">Register</button>
     </form>
     <script src="assets/js/jquery.min.js"></script>
     <script src="register.js"></script>
     <script src="userservice.js"></script>
     <script src="register-validation.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="styles.css">
+<header>
+    <nav class="navbar">
+        <img class="logoImage" src="images/med1.png" alt="logo">
+        <span class="logoTitle">Med Shop</span>
+        <div class="navbar-item">
+            <span><a class="nav-link" href="listUsers_admin.html">ListUsers</a>  </span>
+            <span><a class="nav-link" href="listOrders_admin.html" >ListOrders</a> </span>
+            <span><a class="nav-link" href="listProducts_admin.html" >ListProducts</a> </span>
+            <span><a class="nav-link" href="addproducts_admin.html" >AddProducts</a> </span>
+            <span> <a class="nav-link" href="admin_login.html">Logout</a></span>
+        </div>
+    </nav>
+    <script>
+        function toShow() {
+            let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+            console.log(userStr);
+            if (userStr != null) {
+                // localStorage.setItem("isLoggedIn",JSON.stringify(true))
+                $(".navlink[data-loggedin='true']").show();
+                $(".navlink[data-loggedin='false']").hide();
+                // $("#profile").html("Welcome " + user.email + "!!!");
+            } else {
+                // localStorage.setItem("isLoggedIn",JSON.stringify(false))
+                $(".navlink[data-loggedin='true']").hide();
+                $(".navlink[data-loggedin='false']").show();
+            }
+        }
+        toShow();
+    </script>
+</header>

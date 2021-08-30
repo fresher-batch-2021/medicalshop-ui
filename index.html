@@ -1,112 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
-   <header id="header">  
-   </header>
-   <div class="slideshow_container">
-    <!-- Image slider is here -->
-</div>
-<br>
-<br>
-<section  class="cat">
-  <hr>
- <h2 class="catagoriestitles"> shop by catagories</h2>
- <br>
- <hr>
- <ul id="autoWidth" class="container" class="cs-hidden">
-   <li class="item">
-       <div class="feature-box">
-           <a href="tablets.html"><img src="images/pills.jpeg" alt="Show Image"></a>
-       </div>
-       <span>Tablets</span>
-   </li>
-   <li class="item">
-       <div class="feature-box">
-           <a href="lotions.html">
-               <img src="images/lotion.jpg" alt="Show Image">
-           </a>
-       </div>
-       <span>Lotions</span>
-   </li>
-   <li class="item">
-       <div class="feature-box">
-           <a href="syrup.html">
-               <img src="images/syrup.jpg" alt="Show Image">
-           </a>
-       </div>
-       <span>Syrup</span>
-   </li>
-   <li class="item">
-       <div class="feature-box">
-           <a href="oilment.html"> <img src="images/oilments.jpg" alt="Show Image"></a>
-       </div>
-       <span>Oilments</span>
-   </li>  
- </ul>
-</section>
-<br>
-<br>
-<section  class="cat">
-   <hr>
-  <h2 class="catagoriestitles"> Top Brands</h2>
-  <br>
-  <hr>
-   <ul id="autoWidth" >
-    <li class="item">
-        <div class="feature-box">
-            <a href="#"> <img src="images/vicks.jpg" alt="Show Image"></a> </div>
-        <span>Vicks</span>
-    </li>
-    <li class="item">
-        <div class="feature-box">
-            <a href="#"><img src="images/dettol.jpg" alt="Show Image"></a>
-        </div>
-        <span>Dettol</span>
-    </li>
-    <li class="item">
-        <div class="feature-box">
-            <a href="syrup.html"> <img src="images/volini.jpg" alt="Show Image"></a>
-        </div>
-        <span>Volini</span>
-    </li>
-    <li class="item">
-        <div class="feature-box">
-            <a href="oilment.html"> <img src="images/nivea.jpg" alt="Show Image"></a>
-        </div>
-        <span>Nivea</span>
-    </li>  
-  </ul>
-</section>
-<br>
-<br>
-<section class="cat1">
+    <header id="header"></header>
+    </div>
+    <div class="slider" id="slideshow_container"></div>
     <hr>
-   <h2 class="catagoriestitles">Products</h2>
-   <br>
-   <hr>
-<div  class="product-container" id="producttable">
-</div>
-</section>
-
-<footer id="footer">  
-</footer>
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="header.js"></script>
-  <script src="index.js"></script>
-  <script src="product.js"></script>
-
-  <script src="assets/js/indexproducts.json"></script>
+    <h2 class="titles">Products</h2>
+    <hr>
+    <section class="productContainer">
+        <div id="producttable"></div>
+    </section>
+    <br>
+    <br>
+    <footer id="footer">
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html");
+    </script>
+    <script src="index.js"></script>
+    <script src="/productservice.js"></script>
+    <script src="product.js"></script>
 </body>
+
 </html>

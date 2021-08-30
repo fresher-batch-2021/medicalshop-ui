@@ -1,28 +1,36 @@
 <link rel="stylesheet" href="styles.css">
 <header>
-<nav class="navbar">  
-      <img class="img1" src="images/med1.png" alt="logo"><span class="medshopfnt">Med Shop</span>
-      <span class="option" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-       <span class="navlinks"></span>   
-       <a href="register.html" >Register</a> 
-       <a href="cart.html"  >Cart</a>
-       <a href="products.html" >Products</a>
-       <a href="index.html" >Home</a>
-    <div class="welcome" id="loggedIn"> </div>
-</nav>
-<div class="welcome" id="loggedIn1"> </div>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div> 
-   <img src="images/person.png" alt="no">
-   <span id="loggedIn"></span> 
- </div>
-  <a href="MyOrder.html"><img src="images/mybag.png">MyOrders</a>
-  <a href="cart.html"><img src="images/cart1.png" alt="cart">Cart</a>
-  <a href="addressBook.html"><img src="images/addressbook.png" alt="cart">AddressBook</a>
-  <a href="#">Orders</a>
-</div> 
+    <nav class="navbar">
+        <img class="logoImage" src="images/med1.png" alt="logo">
+        <span class="logoTitle">Med Shop</span>
+        <div class="search-bar">
+            <input type="text" name="search" id="search" placeholder="Search your Medicines"> </input>
+            <a onclick="searchMedicine()"><img src="images/search.png" alt="search"></a>
+        </div>
+        <div class="navbar-item">
+            <span><a class="navlink"  href="index.html">Home</a>  </span>
+            <span><a class="navlink" href="products.html" >Medicines</a> </span>
+            <span>  <a class="navlink" href="cart.html"  data-loggedin="true">Cart</a> </span>
+            <span><a class="navlink" id="orderbtn" href="MyOrder.html " data-loggedin="true"  >Myorders</a> </span>
+            <span> <a class="navlink" href="register.html"data-loggedin="false" >Register</a> </button> </span>
+            <span> <a class="navlink" href="login.html"data-loggedin="false" >Login</a></span>
+            <span> <a class="navlink" href="admin_login.html"data-loggedin="false" >AdminPortal</a></span>
+            <span> <a  class="navlink" onclick="logout()" data-loggedin="true" >Logout</a></span>
+        </div>
+        <div class="welcome" id="loggedIn" data-loggedin="true"> </div>
+
+        <!-- <span > 
+         <button> <a class="nav-item" href="register.html" >Register</a></button> 
+         <button class="nav-item"  class="navlinks"></button> 
+         </span>  -->
+
+    </nav>
+    <!-- <nav>
+    <span class="navlinks"></span>   
+    <a href="register.html" >Register</a>
+</nav> -->
 </header>
 <script src="header.js"></script>
 <script src="cart.js"></script>
+<script src="menu.js"></script>
 </script>

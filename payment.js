@@ -1,49 +1,43 @@
-
-function  paymentProcess()
-      {
-          event.preventDefault();
-          const name=document.querySelector("#name").value;
-          const street=document.querySelector("#street").value;
-          const city = document.querySelector("#city").value;
-          const state=document.querySelector("#state").value;
-          const pincode=document.querySelector("#pincode").value;
-          console.log(pincode);
-        
-          if(name == "" || name == null || name.trim() =="")
-          {
-            alert("Name cannot be null");
-          }
-          else if (street=="" || street==null || street.trim()=="")
-          {
-                 alert("Provide address Details");
-          }
-          else if (city=="" || city==null || city.trim()=="")
-          {
-                 alert("city Name cannot be null");
-          }
-          else if (state=="" || state==null || state.trim()=="")
-          {
-                 alert("State Name cannot be null");
-          }
-
-          else if(pincode.length !=6)
-          {
-                alert("Pincode is not valid");
-          }
-          else
-          {
-            const addressobj={
-  
-              "name":name,
-              "street":street,
-              "city":city,
-              "state":state,
-              "pincode": pincode
-             };
-          localStorage.setItem("paymentaddress",JSON.stringify(addressobj));
-          alert("Order placed");
-          window.location.href="order.html";  
-          }   
-          
-      }
-     
+function orderNow() {
+    event.preventDefault();
+    let total = localStorage.getItem("totalAmount");
+    document.querySelector("#totalAmount").value = total;
+    const name = document.querySelector("#name").value;
+    const phonenumber = document.querySelector("#phoneNumber").value;
+    const date = document.querySelector("#date").value;
+    const street = document.querySelector("#street").value;
+    const city = document.querySelector("#city").value;
+    const state = document.querySelector("#state").value;
+    const pincode = document.querySelector("#pincode").value;
+    const totalAmount = document.querySelector("#totalAmount").value;
+    let product = JSON.parse(localStorage.getItem("PRODUCTS"));
+    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    let loggedInEmail = user != null ? user.email : null;
+    try {
+        paymentValidation.validate(name, street, state, pincode, phonenumber)
+        let orderNow = {
+            name: name,
+            phonenumber: phonenumber,
+            date: date,
+            street: street,
+            city: city,
+            state: state,
+            pincode: pincode,
+            status: "ORDERED",
+            totalAmount: totalAmount,
+            Payment: "Cash On Delivery",
+            productDetails: product,
+            email: loggedInEmail
+        };
+        console.log(orderNow);
+        userService.order(orderNow).then(res => {
+            alert("your order successfully placed");
+            window.location.href = "placeOrder.html";
+        }).catch(err => {
+            alert("order failed");
+        });
+    } catch (err) {
+        console.log(err.message);
+        alert(err.message);
+    }
+}
