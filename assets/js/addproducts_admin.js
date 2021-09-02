@@ -1,15 +1,16 @@
 function addMedicine() {
     event.preventDefault();
     const productName = document.querySelector("#name").value;
-    const productImage = document.querySelector("#imageurl").value;
+    const imageUrl = document.querySelector("#imageurl").value;
     const price = document.querySelector("#price").value;
+    const productImage = imageUrl.substr(imageUrl.lastIndexOf("\\") + 1);
     console.log(productName)
     console.log(productImage)
     console.log(price)
     try {
         let productValues = {
             productName: productName,
-            productImage: productImage,
+            productImage: "images/" + productImage,
             price: price
         };
         console.log(productValues);

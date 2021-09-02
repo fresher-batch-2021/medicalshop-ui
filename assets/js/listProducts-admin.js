@@ -9,26 +9,23 @@ function listData() {
     axios.get(url, { headers: { Authorization: basicAuth } }).then(res => {
         let data = res.data.rows;
         let productList = data.map(obj => obj.doc);
-
-
-
         console.log(productList);
-
         let i = 0;
         for (let productobj of productList) {
             i = i + 1;
-
-            deletebutton = `<button type="submit">Delete</button>`
-
-            content = content + "<tr><td>" + i + "</td>" + "<td>" + productobj.productImage + "</td>" + "<td>" + productobj.productName + "</td>" + "<td>" + productobj.price + "<td>" + deletebutton + "</td>" + "</td></tr>";
-
-
-            document.querySelector("#listProducts").innerHTML = content;
+            console.log(productobj._id);
+            console.log(productobj._rev);
+            content = content + `<tr>
+            <td >   ${i} </td> 
+            <td id="tdImg" >   <img class="showImg" src="${productobj.productImage}" alt="Product image"  >  </td> 
+            <td>   ${productobj.productName} </td>
+            <td>   ${productobj.price} </td> 
+            <td> <button class="button" onclick="deleteMedicine('${productobj._id}','${productobj._rev}')">Delete </button> <a class="button" href='editProducts_admin.html?id=${productobj._id}'>Edit</a></td>
+            </tr>`;
         }
-        // window.location.href="list.html";
+        document.querySelector("#listProducts").innerHTML = content;
     }).catch(err => {
         console.log(err.response.data);
-        alert("List failed");
     });
 
 }

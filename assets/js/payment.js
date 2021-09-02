@@ -1,5 +1,11 @@
 function orderNow() {
     event.preventDefault();
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '-' + mm + '-' + yyyy;
+    console.log(today);
     let total = localStorage.getItem("totalAmount");
     document.querySelector("#totalAmount").value = total;
     const name = document.querySelector("#name").value;
@@ -18,6 +24,7 @@ function orderNow() {
         let orderNow = {
             name: name,
             phonenumber: phonenumber,
+            TodayDate: today,
             date: date,
             street: street,
             city: city,
@@ -31,10 +38,14 @@ function orderNow() {
         };
         console.log(orderNow);
         userService.order(orderNow).then(res => {
-            alert("your order successfully placed");
-            window.location.href = "placeOrder.html";
+            toastr.success("your order successfully placed");
+            setTimeout(function() {
+                window.location.href = "placeOrder.html"
+            }, 3000);
+            localStorage.removeItem("PRODUCTS");
+            localStorage.removeItem("cartCount");
         }).catch(err => {
-            alert("order failed");
+            toastr.error("order failed");
         });
     } catch (err) {
         console.log(err.message);

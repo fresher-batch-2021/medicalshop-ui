@@ -4,28 +4,29 @@
         <img class="logoImage" src="images/med1.png" alt="logo">
         <span class="logoTitle">Med Shop</span>
         <div class="navbar-item">
-            <span><a class="nav-link" href="listUsers_admin.html">ListUsers</a>  </span>
-            <span><a class="nav-link" href="listOrders_admin.html" >ListOrders</a> </span>
-            <span><a class="nav-link" href="listProducts_admin.html" >ListProducts</a> </span>
-            <span><a class="nav-link" href="addproducts_admin.html" >AddProducts</a> </span>
-            <span> <a class="nav-link" href="admin_login.html">Logout</a></span>
+            <span><a class="nav-link" href="listUsers_admin.html" data-loggedin="true">ListUsers</a>  </span>
+            <span><a class="nav-link" href="listOrders_admin.html" data-loggedin="true" >ListOrders</a> </span>
+            <span><a class="nav-link" href="listProducts_admin.html" data-loggedin="true">ListProducts</a> </span>
+            <span><a class="nav-link" href="addproducts_admin.html" data-loggedin="true">AddProducts</a> </span>
+            <span> <a class="nav-link" data-loggedin="false" onclick="adminLogout()">Logout</a></span>
         </div>
+        <div class="welcome" id="loggedIn" data-loggedin="true"> </div>
+
     </nav>
-    <script>
-        function toShow() {
-            let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-            console.log(userStr);
-            if (userStr != null) {
-                // localStorage.setItem("isLoggedIn",JSON.stringify(true))
-                $(".navlink[data-loggedin='true']").show();
-                $(".navlink[data-loggedin='false']").hide();
-                // $("#profile").html("Welcome " + user.email + "!!!");
-            } else {
-                // localStorage.setItem("isLoggedIn",JSON.stringify(false))
-                $(".navlink[data-loggedin='true']").hide();
-                $(".navlink[data-loggedin='false']").show();
-            }
-        }
-        toShow();
-    </script>
 </header>
+<script>
+    function checkAdminLogin() {
+        let userStr = localStorage.getItem("LOGGED_IN_USER");
+        let user = userStr != null ? JSON.parse(userStr) : null;
+        console.log(user);
+        if (user != null) {
+            document.querySelector("#loggedIn").innerHTML = "welcome" + " " + user.email + "</a>";
+        }
+    }
+    checkAdminLogin();
+
+    function adminLogout() {
+        localStorage.removeItem("LOGGED_IN_USER");
+        window.location.href = "login.html";
+    }
+</script>

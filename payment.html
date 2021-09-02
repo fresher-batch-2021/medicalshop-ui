@@ -8,26 +8,26 @@
     <title>Payment</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 </head>
 
 <body>
     <header id="header"></header>
     <h3 class="titles">Payment Details</h3>
-
-    <form>
-        <div class="Billing">
-            <div class="address">
-                <h3>Billing Address</h3>
-                <label for="name">Name*</label>
-                <input type="text" name="name" id="name" required> <br/>
-                <label for="phoneNumber">Contact Number</label>
-                <input type="text" name="phoneNumber" id="phoneNumber" required pattern="[6-9]{1}[0-9]{9}"><br>
-                <label for="date">Delivery Date:</label>
-                <input type="date" name="date" id="date" required><br>
-                <label for="street">Street*</label>
-                <input type="text" name="street" id="street" required> <br/>
-                <label for="city">City*:</label>
-                <select id="city" name="city" required>
+    <form onsubmit="orderNow()">
+        <label for="name">Name*</label>
+        <input type="text" name="name" id="name" required autocomplete="off"><br/>
+        <label for="phoneNumber">Contact Number*</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" pattern="[6-9]{1}[0-9]{9}" autocomplete="off" required><br>
+        <label for="date">Delivery Date*</label>
+        <input type="date" name="date" id="date" required><br>
+        <label for="street">Street*</label>
+        <input type="text" name="street" id="street" required autocomplete="off"> <br/>
+        <label for="city">City*</label>
+        <select id="city" name="city" required>
           <option value="" disabled>--SELECT--</option>
           <option value="chennai">Chennai</option>
           <option value="coimbatore">coimbatore</option>
@@ -38,20 +38,20 @@
           <option value="Villupuram">Villupuram</option>
           <option value="Virudhunagar">virudhunagar</option>  
         </select><br>
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" required><br>
-                <label for="pincode">pincode</label>
-                <input type="text" id="pincode" name="pincode" required><br>
-            </div>
-            <label for="totalAmount">Totalamount</label>
-            <input type="text" id="totalAmount" autocomplete="off" required> </div><br>
-        <button class="orderbutton" onclick="orderNow()">Proceed</button>
+        <label for="state">State*</label>
+        <input type="text" id="state" name="state" required autocomplete="off"><br>
+        <label for="pincode">pincode*</label>
+        <input type="text" id="pincode" name="pincode" required autocomplete="off"><br>
+        </div>
+        <input type="hidden" id="totalAmount" autocomplete="off" required> </div><br>
+        <button class="formButton">Proceed</button>
     </form>
-    </div>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="payment.js"></script>
-    <script src="/userservice.js"></script>
-    <script src="/payment-validation.js"></script>
+    <script src="/assets/js/router.js"></script>
+    <script src="/assets/js/payment.js"></script>
+    <script src="/assets/js/userservice.js"></script>
+    <script src="/assets/js/payment-validation.js"></script>
+    <script src="/assets/js/order.js"></script>
     <script>
         $("#header").load("header.html");
     </script>
@@ -68,7 +68,7 @@
         if (day < 10)
             day = '0' + day.toString();
 
-        var minDate = year + '-' + month + '-' + day;
+        var minDate = day + '-' + month + '-' + year;
 
         $('#date').attr('min', minDate);
     });

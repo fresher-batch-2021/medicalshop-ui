@@ -206,7 +206,8 @@ select {
 
 .formButton {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #84CBFF;
+    font-size: 15px;
     color: white;
     padding: 14px 20px;
     margin-right: 10px;
@@ -253,11 +254,15 @@ select {
 /* cart.html */
 
 .order-button {
-    background-color: DodgerBlue;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #84CBFF;
+    margin-left: 45px;
+    margin-top: 10px;
     color: white;
     padding: 10px 15px;
     font-size: 16px;
-    float: right;
     text-decoration: none;
 }
 
@@ -319,4 +324,32 @@ select {
     margin-bottom: 100px;
     margin-left: 500px;
     margin-right: 100px;
+}
+
+
+/* button */
+
+.button,
+.button a {
+    background-color: #84CBFF;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+/* listproducts */
+
+.showImg {
+    width: 10%;
+    height: 20%;
+}
+
+#tdImg {
+    /* padding-left: -10px;
+    padding-right: 10px; */
+    margin-left: 10px;
 }

@@ -16,14 +16,15 @@ function addProductToLs() {
     console.log(window.location.search.substr(1));
     const params = new URLSearchParams(window.location.search.substr(1));
     if (params.has("productName")) {
-        let pro = params.get("productName");
-        let price = params.get("price");
+        let medicineName = params.get("productName");
+        let medicineprice = params.get("price");
         let product = {
-            "productName": pro,
-            "Price": price
+            "productName": medicineName,
+            "Price": medicineprice
         };
-        console.log("product", pro);
-        console.log("price", price);
+        console.table(product);
+        console.log("product", medicineName);
+        console.log("price", medicineprice);
         toCart(product);
     }
 }
@@ -58,7 +59,6 @@ function addtocart() {
     itemList = "";
     let total = 0;
     let count = 1;
-    let Quantity = 0;
     let sum = 0;
     console.log(sum);
     for (let list of productList) {
@@ -67,9 +67,14 @@ function addtocart() {
         let priceValue = parseFloat(list.Price);
         total = priceValue * list.Quantity;
         console.log(total);
-        itemList =
-            itemList +
-            "<tr><td>" + count + "</td><td>" + list.productName + "</td><td>" + list.Price + "</td><td>" + list.Quantity + "</td><td>" + total + "</td><td>" + `<button type="button" class="deletebutton" onclick="deleteCartData(${count - 1})"> <i class="fa fa-trash-o" style="font-size:14px;color:red"></i> </button>` + "</td>";
+        itemList = itemList + `<tr>
+        <td >   ${count} </td> 
+        <td>   ${list.productName} </td>
+        <td>   ${list.Price} </td>
+        <td>   ${list.Quantity} </td>
+        <td>   ${total} </td> 
+        <td><button type="button" class="deletebutton" onclick="deleteCartData(${count - 1})"> <i class="fa fa-trash-o" style="font-size:14px;color:red"></i> </button></td>
+        </tr>`;
         count++;
         sum = sum + total;
         console.log(sum);
@@ -103,8 +108,9 @@ function cartCheck() {
     let cartItem = JSON.parse(localStorage.getItem("PRODUCTS"));
     if (cartItem == null || cartItem == "") {
         alert("cant order when cart is empty ");
-        window.location.href = "/products.html";
+        window.location.href = "products.html";
     } else {
+        checkLogin1();
         window.location.href = "payment.html";
     }
 }
@@ -119,16 +125,15 @@ function getCartCount() {
 }
 getCartCount();
 
-function checkLoginForMyOrder() {
+function checkLogin1() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user);
-    if (user != null) {
-        document.querySelector("#cart-table").innerHTML = content1;
-        localStorage.removeItem("cartCount");
+    if (user == null) {
+
+        window.location.href = "login.html?redirectURL=cart.html";
     } else {
-        let content2 = "Nothing to show";
-        document.querySelector("#cart-table").innerHTML = content2;
+        window.location.href = "payment.html";
 
     }
 }

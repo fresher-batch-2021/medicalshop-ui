@@ -1,23 +1,36 @@
 const routes = [
     { path: 'index.html' },
-    { path: 'products.html'},
-    { path: 'cart.html'},
+    { path: 'products.html' },
+    { path: 'cart.html' },
     { path: 'login.html' },
     { path: 'register.html' },
-    { path: 'myOrders.html'},
-    { path: 'payment.html'}
+    { path: 'header.html' },
+    { path: 'MyOrder.html', role: ["user"] },
+    { path: 'payment.html', role: ["user"] },
+    { path: 'placeOrder.html', role: ["user"] },
+    { path: 'addproducts_admin.html', role: ["admin"] },
+    { path: 'adminheader.html', role: ["admin"] },
+    { path: 'listUsers_admin.html', role: ["admin"] },
+    { path: 'listOrders_admin.html', role: ["admin"] },
+    { path: 'listProducts_admin.html', role: ["admin"] },
+    { path: 'editProducts_admin.html', role: ["admin"] }
 ];
+// =====
+function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+}
+// ======
 function checkAccess(pageName, role) {
     let allowed = false;
     for (let route of routes) {
-        
+
         if (route.path == pageName) {
-            
-            if (!route.roles) {
+
+            if (!route.role) {
                 allowed = true;
                 break;
-            }
-            else if (route.roles.includes(role)) {
+            } else if (route.role.includes(role)) {
                 allowed = true
                 break;
             }
