@@ -16,18 +16,15 @@ function products() {
             localStorage.setItem("productobjList", JSON.stringify(productobj));
         }
         console.log(productContent);
-        document.querySelector("#producttable").innerHTML = productContent;
-    }).catch((err) => {
-        // console.log( err.response.data);
-    })
+        $("#producttable").html(productContent);
+    }).catch((err) => {})
 }
 products();
-
 
 function searchMedicine() {
     event.preventDefault();
     console.log("search medicines");
-    let productName = document.querySelector("#search").value;
+    let productName = $("#search").val();
     console.log(productName);
     productService.getAllProducts().then(res => {
         const data = res.data.rows;
@@ -48,7 +45,7 @@ function searchMedicine() {
                 <button> <a class="add-cart-Button" onclick="checkLoginForMyOrder();" href="cart.html?productName=${productobj.productName}&price=${productobj.price}"> ADD TO CART</a></button>
             </div>
         </div>`
-            document.querySelector("#producttable").innerHTML = productContent;
+            $("#producttable").html(productContent);
         }
     });
 }

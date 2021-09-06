@@ -19,7 +19,7 @@
     <h3 class="titles">Payment Details</h3>
     <form onsubmit="orderNow()">
         <label for="name">Name*</label>
-        <input type="text" name="name" id="name" required autocomplete="off"><br/>
+        <input type="text" name="name" id="name" pattern="[A-Za-z ]{1,32}" required autocomplete="off"><br/>
         <label for="phoneNumber">Contact Number*</label>
         <input type="text" name="phoneNumber" id="phoneNumber" pattern="[6-9]{1}[0-9]{9}" autocomplete="off" required><br>
         <label for="date">Delivery Date*</label>
@@ -44,7 +44,7 @@
         <input type="text" id="pincode" name="pincode" required autocomplete="off"><br>
         </div>
         <input type="hidden" id="totalAmount" autocomplete="off" required> </div><br>
-        <button class="formButton">Proceed</button>
+        <button type="submit" class="formButton">Proceed</button>
     </form>
     <script src="assets/js/jquery.min.js"></script>
     <script src="/assets/js/router.js"></script>

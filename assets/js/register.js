@@ -1,12 +1,12 @@
-// $("#header").load("header.html");
+$("#header").load("header.html");
 
 function register() {
     event.preventDefault();
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
-    const mobileNo = document.querySelector("#mobileNo").value;
-    const password = document.querySelector("#password").value;
-    const confirmPassword = document.querySelector("#confirmPassword").value;
+    const name = $("#name").val();
+    const email = $("#email").val();
+    const mobileNo = $("#mobileNo").val();
+    const password = $("#password").val();
+    const confirmPassword = $("#confirmPassword").val();
     try {
 
         RegisterValidation.validate(name, email, mobileNo, password, confirmPassword)
@@ -21,7 +21,6 @@ function register() {
             "role": "user"
         };
         console.log(userobj);
-
         userService.register(userobj).then(res => {
             let data = res.data;
             console.log(data);

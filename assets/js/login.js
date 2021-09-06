@@ -2,8 +2,8 @@ $("#header").load("header.html");
 
 function login() {
     event.preventDefault();
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+    const email = $("#email").val();
+    const password = $("#password").val();
     if (password.length < 8) {
 
         alert("password must be greater than 8 characters");
@@ -35,7 +35,5 @@ function login() {
             console.error(err.response.data);
             toastr.error("err");
         });
-        // window.location.href = "index.html";
-
     }
 }

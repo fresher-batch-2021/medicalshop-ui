@@ -1,5 +1,5 @@
 $("#header").load("header.html");
-// let products = {};//inistialize json array
+
 function getAllProducts() {
     let products = JSON.parse(localStorage.getItem("PRODUCTS")) || [];
     return products;
@@ -12,7 +12,7 @@ function addProducts(product) {
     localStorage.setItem("PRODUCTS", JSON.stringify(products));
 }
 
-function addProductToLs() {
+function addProductToJSON() {
     console.log(window.location.search.substr(1));
     const params = new URLSearchParams(window.location.search.substr(1));
     if (params.has("productName")) {
@@ -28,7 +28,7 @@ function addProductToLs() {
         toCart(product);
     }
 }
-addProductToLs();
+addProductToJSON();
 
 function toCart(product) {
     let cartItemsStr = localStorage.getItem("PRODUCTS");
@@ -36,7 +36,6 @@ function toCart(product) {
     console.log(cartItems);
     // If item already exist, update the quantity
     let index = cartItems.findIndex(cartItems => cartItems.productName == product.productName);
-    // alert(index);
     console.log(index);
     if (index != -1) {
         let cartObj = cartItems[index];
@@ -85,7 +84,7 @@ function addtocart() {
     let end = `<tr><td columnspan="3" class="totalRow" >SubTotal</td><td columnspan="5">${sum}</td></tr></table>`;
     localStorage.setItem("totalAmount", sum);
     content = itemList + end;
-    document.querySelector("#cart-table").innerHTML = content;
+    $("#cart-table").html(content);
     localStorage.setItem("productList", JSON.stringify(productList));
 }
 
@@ -104,6 +103,7 @@ function deleteCartData(index) {
     alert("Do You want to remove this item from cart");
 }
 
+
 function cartCheck() {
     let cartItem = JSON.parse(localStorage.getItem("PRODUCTS"));
     if (cartItem == null || cartItem == "") {
@@ -121,7 +121,7 @@ function getCartCount() {
     console.log(cartCountValue);
     let content = "";
     content = cartCountValue;
-    document.querySelector("#countValue").innerHTML = content;
+    $("#countValue").html(content);
 }
 getCartCount();
 

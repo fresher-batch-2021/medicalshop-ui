@@ -17,13 +17,14 @@ function listData() {
             console.log(productobj._rev);
             content = content + `<tr>
             <td >   ${i} </td> 
-            <td id="tdImg" >   <img class="showImg" src="${productobj.productImage}" alt="Product image"  >  </td> 
+            <td>   ${productobj.productImage}"  </td> 
             <td>   ${productobj.productName} </td>
             <td>   ${productobj.price} </td> 
+            <td>   ${productobj.category} </td> 
             <td> <button class="button" onclick="deleteMedicine('${productobj._id}','${productobj._rev}')">Delete </button> <a class="button" href='editProducts_admin.html?id=${productobj._id}'>Edit</a></td>
             </tr>`;
         }
-        document.querySelector("#listProducts").innerHTML = content;
+        $("#listProducts").html(content);
     }).catch(err => {
         console.log(err.response.data);
     });

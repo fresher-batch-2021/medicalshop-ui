@@ -1,17 +1,21 @@
 function addMedicine() {
     event.preventDefault();
-    const productName = document.querySelector("#name").value;
-    const imageUrl = document.querySelector("#imageurl").value;
-    const price = document.querySelector("#price").value;
+    const productName = $("#medicineName").val();
+    const imageUrl = $("#imageurl").val();
+    const price = $("#price").val();
+    const category = $("#category").val();
     const productImage = imageUrl.substr(imageUrl.lastIndexOf("\\") + 1);
     console.log(productName)
     console.log(productImage)
     console.log(price)
     try {
+
+        ProductsValidation.validate(productName, price, category)
         let productValues = {
             productName: productName,
             productImage: "images/" + productImage,
-            price: price
+            price: price,
+            category: category,
         };
         console.log(productValues);
         productService.AddProducts(productValues).then(res => {
@@ -28,9 +32,5 @@ function addMedicine() {
     }
 
 
-
-}
-
-function editMedicine() {
 
 }

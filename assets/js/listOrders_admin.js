@@ -8,11 +8,6 @@ function listData() {
         let data = res.data.rows;
         let productList = data.map(obj => obj.doc);
         console.log(productList);
-        // let details = productList.map(obj => obj.productDetails)
-        // console.log("Details", details);
-        // for (let product of productList) {
-        //     console.log("Items", product);
-        // }
         let i = 0;
         for (let productobj of productList) {
             console.table(productobj);
@@ -21,6 +16,8 @@ function listData() {
             for (let item of productobj.productDetails) {
                 itemList += `<li>${item.productName} - ${item.Quantity} Qty - Rs. ${item.Price}</li>`
             }
+            let orderDate = new Date(productobj.date).toJSON(); //.substr(0, 10);
+            let ordereddate = moment(new Date(orderDate)).format("DD-MM-YYYY");
             itemList += '</ul>'
             content = content + `<tr>
         <td >   ${i} </td> 
@@ -30,12 +27,12 @@ function listData() {
         <td>   ${productobj.TodayDate} </td> 
         <td>   ${productobj.totalAmount} </td> 
         <td>   ${productobj.Payment} </td>
-        <td>   ${ productobj.date} </td>
-        <td>   ${ productobj.status} </td> 
+        <td>   ${ordereddate} </td>
+        <td>   ${productobj.status} </td> 
         <td>   <button  class="button" onclick="changeStatus('${productobj._id}')">Change</button></td>
         </tr>`;
-            document.querySelector("#listOrders").innerHTML = content;
-        } // window.location.href="list.html";
+            $("#listOrders").html(content);
+        }
     }).catch(err => {
         console.log(err);
     });
@@ -57,10 +54,12 @@ function changeStatus(id) {
         axios.put(url, orderObj, { headers: { 'Authorization': basicAuth } }).then(res1 => {
             console.log("update status : " + res1.data);
             alert("Updated");
+            listData();
         }).catch(err => {
             console.log(err);
             alert("failed");
         })
 
     });
+
 }

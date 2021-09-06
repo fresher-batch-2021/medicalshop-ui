@@ -14,7 +14,8 @@ function myOrder() {
             for (let item of productobj.productDetails) {
                 itemList += `<li>${item.productName} - ${item.Quantity} Qty - Rs. ${item.Price}</li>`
             }
-
+            let orderDate = new Date(productobj.date).toJSON(); //.substr(0, 10);
+            let ordereddate = moment(new Date(orderDate)).format("DD-MM-YYYY");
             itemList += '</ul>'
 
             content = content + `<tr>
@@ -25,10 +26,10 @@ function myOrder() {
             <td>   ${productobj.totalAmount} </td> 
             <td>   ${productobj.Payment} </td> 
             <td>   ${productobj.TodayDate} </td>
-            <td>   ${productobj.date} </td> 
+            <td>   ${ordereddate} </td> 
             <td>   ${productobj.status} </td> 
           </tr>`;
-            document.querySelector("#myOrderContainer").innerHTML = content;
+            $("#myOrderContainer").html(content);
         }
     }).catch(err => {
         console.log(err);

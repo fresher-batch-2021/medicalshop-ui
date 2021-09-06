@@ -1,7 +1,5 @@
 function listData() {
-    // alert("Train Listed successful 11");
     var content = "";
-
     adminService.getUsers().then(res => {
         let data = res.data.rows;
         let user_list = data.map(obj => obj.doc);
@@ -18,7 +16,7 @@ function listData() {
             <td>   ${listUser.mobileNo} </td> 
             <td>   ${listUser.role} </td> 
           </tr>`;
-            document.querySelector("#listUserDataAdm").innerHTML = content;
+            $("#listUserDataAdm").html(content);
         }
     }).catch(err => {
         console.log(err.response.data);
