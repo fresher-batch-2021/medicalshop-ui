@@ -36,7 +36,6 @@ function orderNow() {
             productDetails: product,
             email: loggedInEmail
         };
-        console.log(orderNow);
         userService.order(orderNow).then(res => {
             toastr.success("your order successfully placed");
             setTimeout(function() {

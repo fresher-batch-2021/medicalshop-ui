@@ -55,7 +55,7 @@ let productList = getAllProducts();
 addtocart();
 
 function addtocart() {
-    itemList = "";
+    let itemList = "";
     let total = 0;
     let count = 1;
     let sum = 0;
@@ -89,7 +89,7 @@ function addtocart() {
 }
 
 function deleteCartData(index) {
-    var arr = JSON.parse(localStorage.getItem("productList"));
+    let arr = JSON.parse(localStorage.getItem("productList"));
 
     if (arr[index].Quantity > 1) {
 
@@ -108,6 +108,7 @@ function cartCheck() {
     let cartItem = JSON.parse(localStorage.getItem("PRODUCTS"));
     if (cartItem == null || cartItem == "") {
         alert("cant order when cart is empty ");
+        // toastr.warning("cant order when cart is empty");
         window.location.href = "products.html";
     } else {
         checkLogin1();

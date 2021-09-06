@@ -149,7 +149,6 @@ input:focus {
 }
 
 .productContainer {
-    border-top: 1px solid black;
     margin-left: 150px;
     margin-right: 20px;
     margin-top: 10px;
@@ -249,11 +248,6 @@ select {
 
 
 /*footer */
-
-
-/* footer {
-    top: 1900px;
-} */
 
 .footerContent {
     margin-bottom: 10px;

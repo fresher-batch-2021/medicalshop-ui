@@ -3,7 +3,6 @@ let category = (param.get("value"));
 console.log(category);
 
 function gettingData() {
-    let count = 0;
     //getting category from url
     let productContent = `<hr><h1 style=" margin-top: 20px;">Product for ${category}</h1><hr>`;
     productService.getAllProducts().then((res) => {
@@ -26,7 +25,6 @@ function gettingData() {
             }
 
         }
-        // alert("data got successfull");
     }).catch(err => {
         alert("error");
     });
