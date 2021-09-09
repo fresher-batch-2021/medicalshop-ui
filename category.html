@@ -7,14 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>products</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/healthcare.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <body>
         <header id="header">
 
         </header>
-        <section class="productContainer">
-
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Catagories</a></li>
+            </ul>
+        </div>
+        <section class="productContent">
+            <div class="loader" id="spinner">
+                <span class="dot dot-1"></span>
+                <span class="dot dot-2"></span>
+                <span class="dot dot-3"></span>
+                <span class="dot dot-4"></span>
+            </div>
             <div id="producttable"></div>
         </section>
         <footer id="footer">
@@ -24,7 +36,7 @@
             $("#header").load("header.html");
         </script>
         <script src="/assets/js/productservice.js"></script>
-        <script src="/category.js"></script>
+        <script src="/assets/js/category.js"></script>
 
     </body>
 

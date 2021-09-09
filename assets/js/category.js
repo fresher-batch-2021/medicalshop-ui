@@ -4,14 +4,16 @@ console.log(category);
 
 function gettingData() {
     //getting category from url
-    let productContent = `<hr><h1 style=" margin-top: 20px;">Product for ${category}</h1><hr>`;
+    let productContent = `<h1 class="titles">Product for ${category}</h1>`;
     productService.getAllProducts().then((res) => {
         let data = res.data.rows;
-        let productList = data.map(obj => obj.doc);
-        console.log(productList);
-        for (let productobj of productList) {
-            if (productobj.category == category) {
-                productContent = productContent + `<div class="card">
+        if (res) {
+            hideSpinner();
+            let productList = data.map(obj => obj.doc);
+            console.log(productList);
+            for (let productobj of productList) {
+                if (productobj.category == category) {
+                    productContent = productContent + `<div class="card">
     <img src="${productobj.productImage}" alt="Avatar">
     <div class="product-detail-container">
         <h4><b>${productobj.productName}</b></h4>
@@ -19,8 +21,10 @@ function gettingData() {
         <button> <a class="add-cart-Button" onclick="checkLoginForMyOrder();" href="cart.html?productName=${productobj.productName}&productImage=${productobj.productImage}&price=${productobj.price}"> ADD TO CART</a></button>
     </div>
 </div>`
-                console.log(productContent);
-                document.querySelector("#producttable").innerHTML = productContent;
+                    console.log(productContent);
+                }
+
+                $("#producttable").html(productContent);
 
             }
 
@@ -31,3 +35,8 @@ function gettingData() {
 }
 
 gettingData();
+
+function hideSpinner() {
+    document.getElementById('spinner')
+        .style.display = 'none';
+}

@@ -1,4 +1,5 @@
 $("#header").load("header.html");
+$("#footer").load("footer.html");
 
 function register() {
     event.preventDefault();

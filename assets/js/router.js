@@ -4,6 +4,7 @@ const routes = [
     { path: 'cart.html' },
     { path: 'login.html' },
     { path: 'register.html' },
+    { path: 'category.html' },
     { path: 'header.html' },
     { path: 'MyOrder.html', role: ["user"] },
     { path: 'payment.html', role: ["user"] },

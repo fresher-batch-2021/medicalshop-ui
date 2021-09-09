@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Medicines</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/healthcare.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +25,7 @@
             <label for="name">Medicine Name</label>
             <input type="text" name="name" id="name" required readonly>
             <label for="imageurl">Images</label>
-            <input type="file" name="imageurl" id="imageurl" required>
+            <input type="file" name="imageurl" id="imageurl">
             <label for="price">Product Price</label>
             <input type="number" name="price" id="price" pattern="[0-9]" min="1" required>
             <label for="category">Product category</label>
@@ -35,8 +39,10 @@
 <script>
     $("#header").load("admin_header.html");
 </script>
+<script src="/assets/js/adminservice.js"></script>
+<!-- <script src="/assets/js/addProducts_validation.js"></script> -->
 <script src="/assets/js/addproducts_admin.js"></script>
-<script src="/assets/js/listOrders_admin.js"></script>
+<script src="/assets/js/listProducts-admin.js"></script>
 <script src="/assets/js/editProducts_admin.js"></script>
 
 </html>

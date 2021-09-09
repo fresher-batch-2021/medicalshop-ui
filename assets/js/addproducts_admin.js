@@ -9,7 +9,6 @@ function addMedicine() {
     console.log(productImage)
     console.log(price)
     try {
-
         ProductsValidation.validate(productName, price, category)
         let productValues = {
             productName: productName,
@@ -19,11 +18,15 @@ function addMedicine() {
         };
         console.log(productValues);
         productService.AddProducts(productValues).then(res => {
-            alert("Product Added successful");
-            window.location.href = "listProducts_admin.html";
+            toastr.success("Product Added successful");
+            setTimeout(function() {
+                window.location.href = "listProducts_admin.html";
+            }, 3000);
+
+
         }).catch(err => {
             console.log(err.response.data);
-            alert("Failed to add Products");
+            toastr.error("Failed to add Products");
         });
 
     } catch (err) {

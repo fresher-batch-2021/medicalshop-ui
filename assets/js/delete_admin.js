@@ -23,7 +23,7 @@ function deleteMedicine(Id, revId) {
                     'Your file has been deleted.',
                     'success'
                 )
-                axios.delete(url, { headers: { Authorization: basicAuth } })
+                adminService.deleteProducts(Id, revId)
                     .then(res => {
                         const data = res.data;
                         console.log(data);

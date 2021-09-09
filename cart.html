@@ -9,6 +9,7 @@
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/healthcare.png">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -32,13 +33,14 @@
             </thead>
             <tbody id="cart-table">
             </tbody>
-            <tr id="#total-value"></tr>
         </table>
-        <br>
+        <div class="totals">
+            <span id="sub-Total"></span>
+        </div>
         <div class="tablebutton">
-            <span class="orderbutton"><a  class="order-button" href="products.html">continue shopping</a></span>
-            <span class="orderbutton"><a  class="order-button" onClick="cartCheck()" >Order Now</a></span>
-            <div>
+            <span><a  class="order-button" onClick="cartCheck()" >Order Now</a></span>
+            <span><a  class="cont-button" href="products.html">continue shopping</a></span>
+        </div>
     </section>
     <script src="assets/js/jquery.min.js"></script>
     <script src="/assets/js/router.js"></script>

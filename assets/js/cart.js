@@ -67,13 +67,14 @@ function addtocart() {
         total = priceValue * list.Quantity;
         console.log(total);
         itemList = itemList + `<tr>
-        <td >   ${count} </td> 
+        <td >   ${count} </td>
         <td>   ${list.productName} </td>
         <td>   ${list.Price} </td>
         <td>   ${list.Quantity} </td>
         <td>   ${total} </td> 
-        <td><button type="button" class="deletebutton" onclick="deleteCartData(${count - 1})"> <i class="fa fa-trash-o" style="font-size:14px;color:red"></i> </button></td>
+        <td><button type="button" class="deletebutton" onclick="deleteCartData(${count - 1})"> <i class="fa fa-trash-o" style="font-size:14px;color:red;border:none"></i> </button></td>
         </tr>`;
+        $("#cart-table").html(itemList);
         count++;
         sum = sum + total;
         console.log(sum);
@@ -81,10 +82,10 @@ function addtocart() {
         localStorage.setItem("cartCount", count - 1);
 
     }
-    let end = `<tr><td columnspan="3" class="totalRow" >SubTotal</td><td columnspan="5">${sum}</td></tr></table>`;
+    let content = `<label class="label-subTotal">Subtotal:</label><span class="total-value">${sum}</span>`;
+    $("#sub-Total").html(content);
     localStorage.setItem("totalAmount", sum);
-    content = itemList + end;
-    $("#cart-table").html(content);
+
     localStorage.setItem("productList", JSON.stringify(productList));
 }
 
