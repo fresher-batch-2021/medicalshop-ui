@@ -52,6 +52,11 @@
                 padding-left: 29px;
             }
             
+            .navlink i {
+                font-size: 24px;
+                color: blue;
+            }
+            
             .nav-link {
                 color: black;
                 font-size: 18px;
@@ -91,11 +96,56 @@
             }
             
             .welcome {
+                display: inline;
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-size: 15px;
+                font-size: 19px;
                 color: blue;
                 text-align: center;
-                margin-left: 90%;
+                position: absolute;
+                top: 28px;
+                left: 60%;
+            }
+            
+            .welcome:hover {
+                opacity: 0.5;
+            }
+            /* The Modal (background) */
+            
+            .modal {
+                padding-top: 100px;
+                width: 40%;
+                height: 40%;
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 48%;
+                top: -15px;
+            }
+            /* Modal Content */
+            
+            .modal-content {
+                background-color: #FAF9F9;
+                font-weight: bold;
+                color: blue;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #A9A9A9;
+                width: 35%;
+            }
+            /* The Close Button */
+            
+            .close {
+                color: #aaaaaa;
+                float: right;
+                margin-top: -20px;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: red;
+                text-decoration: none;
             }
             /* SEARCHBAR */
             
@@ -155,6 +205,10 @@
             }
             /* cards */
             /* index products */
+            
+            .productBanner img {
+                width: 100%;
+            }
             
             .titles {
                 margin-top: 20px;
@@ -324,7 +378,6 @@
             
             .table-content td :nth-child(1) {
                 padding: 0px;
-                border: #D3D3D3 solid 1px;
                 margin: 0px;
             }
             /* cart-buttons */
@@ -373,7 +426,7 @@
             
             .label-subTotal {
                 float: left;
-                margin-left: 50px;
+                margin-left: 70px;
                 width: 89%;
                 text-align: right;
                 font-size: 20px;
@@ -382,7 +435,7 @@
             
             .total-value {
                 float: right;
-                margin-right: 10px;
+                margin-right: 15px;
                 font-size: 20px;
                 color: blue;
                 font-weight: bold;
@@ -449,6 +502,10 @@
                 margin-bottom: 20px;
                 margin-top: 30px;
                 margin-left: 40px;
+            }
+            
+            .catagories-card:hover {
+                opacity: 0.5;
             }
             
             .catagories-button {
@@ -522,9 +579,10 @@
             }
             
             .loader>span {
+                display: block;
                 width: 15px;
                 height: 15px;
-                background: blue;
+                background-color: blue;
                 border-radius: 50%;
                 position: relative;
                 margin: 0 7px;
@@ -562,4 +620,135 @@
                 100% {
                     top: 0;
                 }
+            }
+            /* ordertableContent */
+            
+            .order-table-head {
+                font-size: 20px;
+                font-weight: bolder;
+                color: blue;
+                margin-bottom: 20px;
+            }
+            
+            .order-table-content {
+                margin-left: 150px;
+                margin-right: 50px;
+                margin-bottom: 5%;
+                margin-top: 9%;
+                font-size: 0.9em;
+                font-family: sans-serif;
+                min-width: 75%;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            
+            .order-table-content thead tr {
+                background-color: #C0C0C0;
+                color: #ffffff;
+            }
+            
+            .order-table-content tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            
+            .order-table-content th,
+            td {
+                padding: 12px 15px;
+                border: #D3D3D3 solid 1px;
+            }
+            
+            .order-table-content td:nth-child(4) {
+                text-align: left;
+            }
+            
+            .status {
+                color: red;
+            }
+            /* uploadprescription */
+            
+            .upload {
+                background-color: #FAF9F9;
+                display: inline;
+                padding: 3px;
+                position: absolute;
+                top: 28px;
+                left: 48%;
+            }
+            
+            .upload a {
+                text-decoration: none;
+                color: blue;
+            }
+            
+            .upload i {
+                color: blue;
+            }
+            
+            .prescription {
+                background-color: white;
+                border: 1px solid #DCDCDC;
+                padding: 15px;
+                margin: 75px 500px 100px 500px;
+            }
+            
+            .prescription p {
+                color: blue;
+            }
+            
+            .prescription-head {
+                color: blue;
+                display: inline-block;
+                margin-left: 40%;
+                margin-top: 10%;
+            }
+            
+            .prescription button {
+                margin-left: 40%;
+                color: white;
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+                background-color: #84CBFF;
+            }
+            
+            #myProgress {
+                width: 100%;
+                background-color: #ddd;
+                display: none;
+                margin-top: 20px;
+            }
+            
+            #myBar {
+                width: 10%;
+                height: 30px;
+                background-color: #04AA6D;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+            }
+            
+            #alert {
+                display: none;
+                padding: 10px;
+                width: 20%;
+                background-color: #04AA6D;
+                color: white;
+                font-size: 17px;
+                margin-top: 0%;
+                margin-left: 70%;
+            }
+            
+            .closebtn {
+                margin-left: 15px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            
+            .closebtn:hover {
+                color: red;
             }

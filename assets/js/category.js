@@ -4,7 +4,7 @@ console.log(category);
 
 function gettingData() {
     //getting category from url
-    let productContent = `<h1 class="titles">Product for ${category}</h1>`;
+    let productContent = `<h1 class="titles">${category}</h1>`;
     productService.getAllProducts().then((res) => {
         let data = res.data.rows;
         if (res) {

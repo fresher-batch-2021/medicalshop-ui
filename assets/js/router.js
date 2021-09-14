@@ -7,6 +7,7 @@ const routes = [
     { path: 'category.html' },
     { path: 'header.html' },
     { path: 'MyOrder.html', role: ["user"] },
+    { path: 'uploadPrescription.html', role: ["user"] },
     { path: 'payment.html', role: ["user"] },
     { path: 'placeOrder.html', role: ["user"] },
     { path: 'addproducts_admin.html', role: ["admin"] },

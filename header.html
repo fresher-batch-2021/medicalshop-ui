@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="styles.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <header>
     <nav class="navbar">
         <a href="index.html"> <img class="logoImage" src="images/med1.png" alt="logo"></a>
@@ -7,30 +9,37 @@
             <input type="text" name="search" id="search" placeholder="Search your Medicines"> </input>
             <a onclick="searchMedicine()"><img src="images/search.png" alt="search"></a>
         </div>
+        <div class="upload">
+            <a href="uploadPrescription.html"><i class='fas fa-upload'></i>Upload Prescription</a>
+        </div>
+        <div class="welcome" id="loggedIn" data-loggedin="true"> </div>
         <div class="navbar-item">
             <div class="tooltip">
-                <a class="navlink" href="index.html"><img src="/images//home (1).png" alt="home"></a>
+                <a class="navlink" href="index.html"><i class="fas fa-clinic-medical"></i></a>
                 <span class="tooltiptext">Home</span>
             </div>
             <div class="tooltip">
-                <a class="navlink" href="products.html"><img src="/images//product.png" alt="product"> </a>
+                <a class="navlink" href="products.html"><i class='fas fa-briefcase-medical'></i></a>
                 <span class="tooltiptext">Medicines</span>
             </div>
             <div class="tooltip">
-                <a class="navlink" href="cart.html" data-loggedin="true"><img src="/images//shopping-cart.png" alt="cart"></a>
+                <a class="navlink" href="cart.html" data-loggedin="true"><i class='fas fa-shopping-cart' ></i></a>
                 <span class="tooltiptext">Cart</span>
             </div>
             <div class="tooltip">
-                <a class="navlink" href="MyOrder.html" data-loggedin="true"><img src="/images//mybag.png" alt="Myorder"></a>
-                <span class="tooltiptext">MyBag</span>
+                <a class="navlink" href="MyOrder.html" data-loggedin="true"><i class='fas fa-shopping-bag' ></i></a>
+                <span class="tooltiptext">My Order</span>
             </div>
             <span><a class="navlink" href="register.html" data-loggedin="false">Register</a></span>
             <span><a class="navlink" href="login.html"data-loggedin="false" >Login</a></span>
             <span><a class="navlink" onclick="logout()" data-loggedin="true" >Logout</a></span>
         </div>
-        <div class="welcome" id="loggedIn" data-loggedin="true"> </div>
+        </div>
+
     </nav>
 </header>
+<script src="/assets/js/adminservice.js"></script>
 <script src="/assets/js/router.js"></script>
+
 <script src="/assets/js/header.js"></script>
 <script src="/assets/js/cart.js"></script>

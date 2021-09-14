@@ -24,7 +24,7 @@ function listData() {
         <td>   ${productobj.totalAmount} </td> 
         <td>   ${productobj.Payment} </td>
         <td>   ${ordereddate} </td>
-        <td>   ${productobj.status} </td> 
+        <td class="status">   ${productobj.status} </td> 
         <td>   <button  class="button" onclick="changeStatus('${productobj._id}')">Change</button></td>
         </tr>`;
             $("#listOrders").html(content);
@@ -45,7 +45,7 @@ function changeStatus(id) {
 
     axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
         let orderObj = res.data;
-        orderObj.status = "delivered";
+        orderObj.status = "DELIVERED";
         axios.put(url, orderObj, { headers: { 'Authorization': basicAuth } }).then(res1 => {
             console.log("update status : " + res1.data);
             alert("Updated");
